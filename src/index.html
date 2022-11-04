@@ -17,44 +17,7 @@
     <title>Filmoteka</title>
   </head>
   <body>
-    <header class="header header__home">
-      <div class="header__container container">
-        <nav class="header__navigation">
-          <a href="./index.html" class="header__logo link">
-            <img
-              src="../src/images/header/film.svg"
-              class="header__logo_icon"
-              alt="logo"
-            />
-            <h1 class="header__title">Filmoteka</h1>
-          </a>
-
-          <div class="header__buttons_wrapper">
-            <button class="header__btn current-button">HOME</button>
-            <a href="./library.html">
-              <button class="header__btn">MY LIBRARY</button>
-            </a>
-          </div>
-        </nav>
-        <div class="header__search_wrapper">
-          <form class="header__form">
-            <input
-              type="text"
-              class="header__input"
-              name="query"
-              placeholder="Movie search"
-            />
-            <button type="submit" class="header__search">Search</button>
-          </form>
-
-          <!-- Сюда на ошибку можно добавлять и убирать класс is-hidden  -->
-          <span class="header__error"
-            >Search result not successful. Enter the correct movie name and try
-            again</span
-          >
-        </div>
-      </div>
-    </header>
+    <include src="./partials/header-index.html"></include>
     <script src="./index.js" type="module"></script>
   </body>
 </html>
