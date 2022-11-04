@@ -12,9 +12,42 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
+    <link rel="stylesheet" href="../css/index.min.css" />
+
     <title>Filmoteka Library</title>
   </head>
   <body>
+    <header class="header header__library">
+      <div class="header__container container">
+        <nav class="header__navigation">
+          <a href="./index.html" class="header__logo link">
+            <img
+              src="../src/images/header/film.svg"
+              class="header__logo_icon"
+              alt="logo"
+            />
+            <h1 class="header__title">Filmoteka</h1>
+          </a>
+
+          <div class="header__buttons_wrapper">
+            <a href="./index.html">
+              <button class="header__btn">HOME</button>
+            </a>
+            <button class="header__btn current-button">MY LIBRARY</button>
+          </div>
+        </nav>
+
+        <div class="header__library_wrapper">
+          <button
+            type="button"
+            class="header__watched_button active-header-button"
+          >
+            WATCHED
+          </button>
+          <button type="button" class="header__queue_button">QUEUE</button>
+        </div>
+      </div>
+    </header>
     <script src="./library.js" type="module"></script>
   </body>
 </html>

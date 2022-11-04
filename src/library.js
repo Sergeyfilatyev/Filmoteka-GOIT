@@ -1,1 +1,1 @@
-import '../css/index.min.css';
+import '../src/js/library-buttons.js';
