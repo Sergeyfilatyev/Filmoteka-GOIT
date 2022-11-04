@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -12,9 +13,49 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
+    <link rel="stylesheet" href="../css/index.min.css" />
+
     <title>Filmoteka</title>
   </head>
   <body>
+    <header class="header header__home">
+      <div class="header__container container">
+        <nav class="header__navigation">
+          <a href="./index.html" class="header__logo link">
+            <img
+              src="../src/images/header/film.svg"
+              class="header__logo_icon"
+              alt="logo"
+            />
+            <h1 class="header__title">Filmoteka</h1>
+          </a>
+
+          <div class="header__buttons_wrapper">
+            <button class="header__btn current-button">HOME</button>
+            <a href="./library.html">
+              <button class="header__btn">MY LIBRARY</button>
+            </a>
+          </div>
+        </nav>
+        <div class="header__search_wrapper">
+          <form class="header__form">
+            <input
+              type="text"
+              class="header__input"
+              name="query"
+              placeholder="Movie search"
+            />
+            <button type="submit" class="header__search">Search</button>
+          </form>
+
+          <!-- Сюда на ошибку можно добавлять и убирать класс is-hidden  -->
+          <span class="header__error"
+            >Search result not successful. Enter the correct movie name and try
+            again</span
+          >
+        </div>
+      </div>
+    </header>
     <script src="./index.js" type="module"></script>
   </body>
 </html>
