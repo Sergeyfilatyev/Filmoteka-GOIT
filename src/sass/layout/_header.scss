@@ -1,89 +1,14 @@
-.container {
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 320px) {
-  .container {
-    width: 320px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-.section {
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-html {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding: unset;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-::after,
-::before {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 .header__home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../src/images/header/header_img_Mob.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../src/images/header/header_img_Mob.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .header__library {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../src/images/header-library/header_library_Mob.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../src/images/header-library/header_library_Mob.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -92,6 +17,7 @@ body {
 .header__container {
   display: flex;
   flex-direction: column;
+
   padding-top: 40px;
   padding-bottom: 45px;
 }
@@ -235,54 +161,71 @@ body {
 
 @media screen and (min-width: 768px) {
   .header__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)), url("../src/images/header/header_img_Tabl.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)),
+      url('../src/images/header/header_img_Tabl.jpg');
   }
+
   .header__library {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../src/images/header-library/header_library_Tabl.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../src/images/header-library/header_library_Tabl.jpg');
   }
+
   .header__navigation {
     margin-bottom: 40px;
   }
+
   .header__search_wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .header__input {
     width: 370px;
     margin-bottom: 20px;
   }
+
   .header__search {
     margin-bottom: 23px;
   }
+
   .header__title {
     display: block;
   }
+
   .header__logo {
     display: flex;
     align-items: center;
     gap: 8px;
   }
+
   .header__library_wrapper {
     gap: 32px;
     margin-top: -14px;
   }
+
   .header__watched_button {
     width: 152px;
     height: 44px;
   }
+
   .header__queue_button {
     width: 152px;
     height: 44px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .header__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)), url("../src/images/header/header_img_Desc.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)),
+      url('../src/images/header/header_img_Desc.jpg');
   }
+
   .header__library {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../src/images/header-library/header_library_Desc.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../src/images/header-library/header_library_Desc.jpg');
   }
+
   .header__input {
     width: 430px;
     margin-bottom: 16px;
@@ -290,23 +233,19 @@ body {
   .header__search {
     margin-bottom: 19px;
   }
+
   .header__library_wrapper {
     margin-top: 0;
     gap: 16px;
   }
+
   .header__watched_button {
     width: 148px;
     height: 42px;
   }
+
   .header__queue_button {
     width: 148px;
     height: 42px;
   }
 }
-:root {
-  --active_color: #FF6B08;
-  --main-accent-color: #ffffff;
-  --notifying_color: #FF001B;
-  --footer-bg-color: #F7F7F7;
-  --footer-text-color: #545454;
-}/*# sourceMappingURL=index.css.map */
