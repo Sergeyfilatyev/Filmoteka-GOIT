@@ -1,6 +1,7 @@
 import { fetchPopular } from './js/fetch';
 import { markupPopularFilms } from './js/markup-popular-films';
 import { markupSearchFilms } from './js/markup-search-films';
+import './js/btn-up';
 
 const searchForm = document.querySelector('.header__form');
 const searchInput = document.querySelector('.header__input');
