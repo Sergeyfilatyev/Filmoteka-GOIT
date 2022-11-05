@@ -4,8 +4,6 @@ import { refs } from './refs';
 export async function markupSearchFilms(query, page) {
   // const popularFilms = document.querySelector('.popular-films');
 
-  refs.popularFilms.innerHTML = '';
-
   const films = await fetchByName(query, page);
   const searchForm = document.querySelector('.header__form');
   const textError = document.querySelector('.header__error');
@@ -15,6 +13,7 @@ export async function markupSearchFilms(query, page) {
     searchForm.reset();
     return;
   }
+  refs.popularFilms.innerHTML = '';
 
   films.movies.forEach(movie => {
     if (movie.genres.length >= 3) {
@@ -29,8 +28,8 @@ export async function markupSearchFilms(query, page) {
           />
           <div class="info">
             <p class="info__name">${
-              movie.name.length >= 40
-                ? movie.name.substring(0, 40) + '...'
+              movie.name.length >= 37
+                ? movie.name.substring(0, 37) + '...'
                 : movie.name
             }</p>
             <p class="info__other">${movie.genres[0]}, ${
@@ -54,8 +53,8 @@ export async function markupSearchFilms(query, page) {
       />
       <div class="info">
         <p class="info__name">${
-          movie.name.length >= 40
-            ? movie.name.substring(0, 40) + '...'
+          movie.name.length >= 37
+            ? movie.name.substring(0, 37) + '...'
             : movie.name
         }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${
