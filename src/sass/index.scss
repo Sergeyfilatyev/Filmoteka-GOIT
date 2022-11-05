@@ -1,4 +1,4 @@
-@import './utils/varieables';
+@import './utils/variables';
 @import './base/base';
 @import './base/container';
 @import './base/section';
@@ -6,5 +6,9 @@
 @import './layout/header';
 @import './layout/footer';
 
-@import './components/popular-films';
+@import './layout/spinner';
+
+@import './components/popular-films-search-films';
+
 @import './components/btn-up';
+@import './components/modal-movie';

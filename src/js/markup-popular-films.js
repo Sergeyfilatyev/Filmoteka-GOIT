@@ -1,16 +1,17 @@
 import { fetchPopular } from './fetch';
+import { refs } from './refs';
 
 export async function markupPopularFilms(page) {
-  const popularFilms = document.querySelector('.popular-films');
-  popularFilms.innerHTML = '';
+  // const popularFilms = document.querySelector('.popular-films');
+  refs.popularFilms.innerHTML = '';
 
   const films = await fetchPopular(page);
 
   films.movies.forEach(movie => {
     if (movie.genres.length >= 3) {
-      popularFilms.insertAdjacentHTML(
+      refs.popularFilms.insertAdjacentHTML(
         'beforeend',
-        `<div class="popular-film__card" data="${movie.id}">
+        `<a class="popular-film__card" href="" data="${movie.id}">
           <img
             class="popular-film__cover"
             src="${movie.cover}"
@@ -18,16 +19,22 @@ export async function markupPopularFilms(page) {
             loading="lazy"
           />
           <div class="info">
-            <p class="info__name">${movie.name}</p>
-            <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year}</p>
+            <p class="info__name">${
+              movie.name.length >= 40
+                ? movie.name.substring(0, 40) + '...'
+                : movie.name
+            }</p>
+            <p class="info__other">${movie.genres[0]}, ${
+          movie.genres[1]
+        }, Other | ${movie.year}</p>
           </div>
-        </div>`
+        </a>`
       );
       return;
     }
-    popularFilms.insertAdjacentHTML(
+    refs.popularFilms.insertAdjacentHTML(
       'beforeend',
-      `<div class="popular-film__card" data="${movie.id}">
+      `<a class="popular-film__card" href="" data="${movie.id}">
       <img
         class="popular-film__cover"
         src="${movie.cover}"
@@ -35,10 +42,16 @@ export async function markupPopularFilms(page) {
         loading="lazy"
       />
       <div class="info">
-        <p class="info__name">${movie.name}</p>
+        <p class="info__name">${
+          movie.name.length >= 40
+            ? movie.name.substring(0, 40) + '...'
+            : movie.name
+        }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
       </div>
-    </div>`
+    </a>`
     );
   });
 }
+
+markupPopularFilms(1);
