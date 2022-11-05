@@ -10,7 +10,7 @@ export async function markupSearchFilms(query, page) {
     if (movie.genres.length >= 3) {
       popularFilms.insertAdjacentHTML(
         'beforeend',
-        `<div class="popular-film__card" data="${movie.id}">
+        `<a class="popular-film__card" href="" data="${movie.id}">
           <img
             class="popular-film__cover"
             src="${movie.cover}"
@@ -21,13 +21,13 @@ export async function markupSearchFilms(query, page) {
             <p class="info__name">${movie.name}</p>
             <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year} <span class="info__rating">${movie.rating}</span></p>
           </div>
-        </div>`
+        </a>`
       );
       return;
     }
     popularFilms.insertAdjacentHTML(
       'beforeend',
-      `<div class="popular-film__card" data="${movie.id}">
+      `<a class="popular-film__card" href="" data="${movie.id}">
       <img
         class="popular-film__cover"
         src="${movie.cover}"
@@ -36,9 +36,11 @@ export async function markupSearchFilms(query, page) {
       />
       <div class="info">
         <p class="info__name">${movie.name}</p>
-        <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
+        <p class="info__other">${movie.genres.join(', ')} | ${
+        movie.year
+      }<span class="info__rating">${movie.rating}</span></p>
       </div>
-    </div>`
+    </a>`
     );
   });
 }
