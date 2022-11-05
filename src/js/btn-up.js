@@ -1,9 +1,10 @@
 import throttle from 'lodash.throttle';
+import { refs } from './refs';
 
-const upBtn = document.querySelector('[data-up-btn]');
+// const upBtn = document.querySelector('[data-up-btn]');
 
-window.addEventListener('scroll', throttle(hideElOnScroll(upBtn), 250));
-upBtn.addEventListener('click', toPageTopOnClick);
+window.addEventListener('scroll', throttle(hideElOnScroll(refs.upBtn), 250));
+refs.upBtn.addEventListener('click', toPageTopOnClick);
 
 function hideElOnScroll(el) {
   return function hideOnScroll(e) {
