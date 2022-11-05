@@ -19,12 +19,15 @@ const load = key => {
 };
 
 const remove = key => {
-    try {
-     localStorage.removeItem(key);
-    } catch (error) {
-      console.log(`Error key: ${key} to delete from local strage; `, error.message);
-    }
-  };
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.log(
+      `Error key: ${key} to delete from local strage; `,
+      error.message
+    );
+  }
+};
 
 export default {
   save,

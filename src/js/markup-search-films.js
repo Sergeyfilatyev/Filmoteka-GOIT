@@ -1,14 +1,16 @@
 import { fetchByName } from './fetch';
+import { refs } from './refs';
 
 export async function markupSearchFilms(query, page) {
-  const popularFilms = document.querySelector('.popular-films');
-  popularFilms.innerHTML = '';
+  // const popularFilms = document.querySelector('.popular-films');
+
+  refs.popularFilms.innerHTML = '';
 
   const films = await fetchByName(query, page);
 
   films.movies.forEach(movie => {
     if (movie.genres.length >= 3) {
-      popularFilms.insertAdjacentHTML(
+      refs.popularFilms.insertAdjacentHTML(
         'beforeend',
         `<div class="popular-film__card" data="${movie.id}">
           <img
@@ -25,7 +27,7 @@ export async function markupSearchFilms(query, page) {
       );
       return;
     }
-    popularFilms.insertAdjacentHTML(
+    refs.popularFilms.insertAdjacentHTML(
       'beforeend',
       `<div class="popular-film__card" data="${movie.id}">
       <img
