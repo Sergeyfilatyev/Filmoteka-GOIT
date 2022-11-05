@@ -1,57 +1,48 @@
-import { fetchPopular } from './js/fetch';
-// export async function fetchById(id);
+import { fetchById } from './fetch';
+import { refs } from './refs';
+console.log('hbhss');
 
-const refs = {
-  modal: document.querySelector('.backdrop'),
-  modalCloseBtn: document.querySelector('.modal-btn-close'),
-  toWatchedBtn: document.querySelector('.watched'),
-  toQueueBtn: document.querySelector('.queue'),
-};
+refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
-function onMovieImageClick(event) {
+async function onMovieImageClick(event) {
+  event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-  event.preventDefault();
+
+  console.log(event.target.dataset.id);
+  // fetchById(event.target.dataset.id).then(console.log);
+  const movie = await fetchById(event.target.dataset.id);
+  refs.modal.innerHTML = '';
+  refs.modal.insertAdjacentHTML(
+    'beforeend',
+    ` <div id="${movie.id}" class="movie-card">
+        <img src="${movie.cover}" alt="${
+      movie.name
+    }" loading="lazy" width='100' height='100'>
+        <div class="movie-info">
+            <h2>${movie.name}</h2>
+            <p>Vote/Votes ${movie.votes}</p>
+             <p>Popularity ${movie.popularity}</p>
+             <p>Original Title ${movie.originalTitle}</p>
+            <p>Genre ${movie.genres.join(', ')}</p>
+            <p>ABOUT ${movie.about}</p>
+         </div>
+         <button type="button" class="modal-btn watched">ADD TO WATCHED</button>
+    <button type="button" class="modal-btn queue">ADD TO QUEUE</button>
+      </div>`
+  );
   openModal();
 }
 
 function openModal() {
-  refs.modal.classList.remove('is-hidden');
+  refs.backdrop.classList.remove('is-hidden');
+  // modalCardMarkup();
 }
 function closeModal() {
-  refs.modal.classList.add('is-hidden');
+  refs.backdrop.classList.add('is-hidden');
 }
 function onCloseBtnClick() {
   closeModal();
-}
-
-function renderMovieCard(movie) {
-  const markup = movie
-    .map(
-      ({
-        id,
-        cover,
-        name,
-        votes,
-        popularity,
-        originalTitle,
-        genres,
-        about,
-      }) => {
-        return ` <div id="${id}" class="movie-card">
-        <img src="${cover}" alt="${name}" loading="lazy">
-        <div class="movie-info">
-            <h2>${name}</h2>
-            <p>Vote/Votes ${votes}</p>
-            <p>Popularity ${popularity}</p>
-            <p>Original Title ${originalTitle}</p>
-            <p>Genre ${genres.map(genre => genre.name)}</p>
-            <p>ABOUT ${about}</p>
-        </div>
-      </div>`;
-      }
-    )
-    .join('');
 }
