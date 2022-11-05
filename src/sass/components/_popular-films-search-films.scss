@@ -28,6 +28,7 @@
 }
 
 .info__other{
+    display: flex;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.33;
@@ -35,13 +36,17 @@
 }
 
 .info__rating{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     width: 36px;
     height: 16px;
+    margin-left: 8px;
     border-radius: 5px;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.16;
-    margin-right: 8px;
     background-color: var(--active_color);
     color: var(--main-accent-color);
 }
@@ -94,5 +99,10 @@
     .info__other{
         font-size: 20px;
         line-height: 1.2;
+    }
+
+    .info__rating{
+        width: 40px;
+        height: 20px;
     }
 }

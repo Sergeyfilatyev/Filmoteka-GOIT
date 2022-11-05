@@ -18,8 +18,14 @@ export async function markupPopularFilms(page) {
             loading="lazy"
           />
           <div class="info">
-            <p class="info__name">${movie.name}</p>
-            <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year}</p>
+            <p class="info__name">${
+              movie.name.length >= 40
+                ? movie.name.substring(0, 40) + '...'
+                : movie.name
+            }</p>
+            <p class="info__other">${movie.genres[0]}, ${
+          movie.genres[1]
+        }, Other | ${movie.year}</p>
           </div>
         </a>`
       );
@@ -35,10 +41,16 @@ export async function markupPopularFilms(page) {
         loading="lazy"
       />
       <div class="info">
-        <p class="info__name">${movie.name}</p>
+        <p class="info__name">${
+          movie.name.length >= 40
+            ? movie.name.substring(0, 40) + '...'
+            : movie.name
+        }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
       </div>
     </a>`
     );
   });
 }
+
+markupPopularFilms(1);

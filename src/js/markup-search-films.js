@@ -5,6 +5,14 @@ export async function markupSearchFilms(query, page) {
   popularFilms.innerHTML = '';
 
   const films = await fetchByName(query, page);
+  const searchForm = document.querySelector('.header__form');
+  const textError = document.querySelector('.header__error');
+
+  if (films.movies.length === 0) {
+    textError.textContent = 'There is no movie for your query';
+    searchForm.reset();
+    return;
+  }
 
   films.movies.forEach(movie => {
     if (movie.genres.length >= 3) {
@@ -18,8 +26,16 @@ export async function markupSearchFilms(query, page) {
             loading="lazy"
           />
           <div class="info">
-            <p class="info__name">${movie.name}</p>
-            <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year} <span class="info__rating">${movie.rating}</span></p>
+            <p class="info__name">${
+              movie.name.length >= 40
+                ? movie.name.substring(0, 40) + '...'
+                : movie.name
+            }</p>
+            <p class="info__other">${movie.genres[0]}, ${
+          movie.genres[1]
+        }, Other | ${movie.year} <span class="info__rating">${
+          movie.rating
+        }</span></p>
           </div>
         </a>`
       );
@@ -35,7 +51,11 @@ export async function markupSearchFilms(query, page) {
         loading="lazy"
       />
       <div class="info">
-        <p class="info__name">${movie.name}</p>
+        <p class="info__name">${
+          movie.name.length >= 40
+            ? movie.name.substring(0, 40) + '...'
+            : movie.name
+        }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${
         movie.year
       }<span class="info__rating">${movie.rating}</span></p>
