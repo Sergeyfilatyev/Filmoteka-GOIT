@@ -48,7 +48,7 @@ export async function markupPopularFilms(page) {
             : movie.name
         }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
-      </div>
+      </div
     </a>`
     );
   });
