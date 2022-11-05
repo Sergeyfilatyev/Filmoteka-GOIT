@@ -28,13 +28,28 @@
 }
 
 .info__other{
+    display: flex;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.33;
     color: var(--active_color);
 }
 
-.info__rating{}
+.info__rating{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 36px;
+    height: 16px;
+    margin-left: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.16;
+    background-color: var(--active_color);
+    color: var(--main-accent-color);
+}
 
 @media screen and (min-width: 768px){
     .popular-films{
@@ -84,5 +99,10 @@
     .info__other{
         font-size: 20px;
         line-height: 1.2;
+    }
+
+    .info__rating{
+        width: 40px;
+        height: 20px;
     }
 }
