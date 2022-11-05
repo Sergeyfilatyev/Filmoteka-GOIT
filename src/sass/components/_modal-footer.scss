@@ -1,0 +1,134 @@
+.backdrop_footer.visibility-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.modal_footer {
+    z-index: 100;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+
+    width: 310px;
+    height: 500px;
+    background-color: var(--footer-bg-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: auto;
+
+    padding: 40px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.modal_footer__clous-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.modal_footer__clous-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal_footer__clous-btn:hover &,
+    .modal_footer__clous-btn:focus & {
+        fill: var(--active_color);
+    }
+}
+
+.backdrop_footer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team_title {
+    margin-bottom: 30px;
+
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.17;
+    text-transform: uppercase;
+}
+
+.team_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team_item{
+    margin-bottom: 20px;
+}
+
+.teammate{
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.33;
+
+}
+
+.team_img{
+    margin-bottom: 10px;
+}
+
+.team_text{
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1.33;
+}
+
+.social_icon {
+    fill: var(--icon-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .social_link:hover &,
+    .social_link:focus & {
+        fill: var(--active_color);;
+    }
+}
+
+.visibility-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media screen and (min-width:768px) {
+    .modal_footer {
+        width: 450px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .modal_footer {
+        width: 700px;
+        height: 600px;
+    }
+}
+
+.second-line__text{
+    cursor: pointer;
+}
+

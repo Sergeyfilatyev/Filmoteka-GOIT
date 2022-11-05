@@ -5,4 +5,7 @@ export const refs = {
   headerQueueButton: document.querySelector('.header__queue_button'),
   searchForm: document.querySelector('.header__form'),
   searchInput: document.querySelector('.header__input'),
+  openModalFooter: document.querySelector('[data-modal-footer-open]'),
+  closeModalFooter: document.querySelector('[data-modal-footer-close]'),
+  modalFooter: document.querySelector('[data-modal-footer]'),
 };
