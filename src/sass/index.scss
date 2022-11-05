@@ -1,9 +1,9 @@
+@import './utils/varieables';
+@import './base/base';
 @import './base/container';
 @import './base/section';
-@import './base/base';
 
 @import './layout/header';
 
-@import './utils/varieables';
-
 @import './components/popular-films-search-films';
+@import './components/btn-up';
