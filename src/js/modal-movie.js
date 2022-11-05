@@ -1,5 +1,13 @@
-// import { fetchPopular } from './js/fetch';
-export async function fetchById(id);
+import { fetchPopular } from './js/fetch';
+// export async function fetchById(id);
+
+const refs = {
+  modal: document.querySelector('.backdrop'),
+  modalCloseBtn: document.querySelector('.modal-btn-close'),
+  toWatchedBtn: document.querySelector('.watched'),
+  toQueueBtn: document.querySelector('.queue'),
+};
+refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
 function onMovieImageClick(event) {
   if (event.target.nodeName !== 'IMG') {
@@ -9,9 +17,15 @@ function onMovieImageClick(event) {
   openModal();
 }
 
-function openModal() {}
-function closeModal() {}
-function onCloseBtnClick() {}
+function openModal() {
+  refs.modal.classList.remove('is-hidden');
+}
+function closeModal() {
+  refs.modal.classList.add('is-hidden');
+}
+function onCloseBtnClick() {
+  closeModal();
+}
 
 function renderMovieCard(movie) {
   const markup = movie
