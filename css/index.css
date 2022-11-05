@@ -339,9 +339,7 @@ body {
 
 .second-line {
   display: flex;
-  flex-direction: row;
   width: 100%;
-  justify-content: space-between;
   margin: 0 auto;
   gap: 10px;
 }
@@ -367,6 +365,7 @@ body {
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .footer__container {
     flex-direction: row;
+    justify-content: center;
     min-width: 480px;
     margin: 0 auto;
   }
@@ -376,26 +375,19 @@ body {
   .first-line {
     margin: auto;
   }
-  .second-line {
-    margin: auto;
-  }
 }
 @media screen and (min-width: 768px) {
   .footer__container {
     width: 768px;
-    flex-direction: row;
+    margin: auto;
   }
   .footer__wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 }
 @media screen and (min-width: 1200px) {
-  .footer {
-    padding-top: 60px;
-  }
   .footer__container {
     width: 1200px;
   }
