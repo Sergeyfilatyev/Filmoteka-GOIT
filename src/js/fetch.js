@@ -86,6 +86,7 @@ export async function fetchPopular(page) {
   Notify.info(`Try to fetch movies for page ${page}`); //test query
 
   try {
+    document.querySelector('.spinner').style.display = 'none';
     const response = await axios.get(
       `${BASIC_QUERY_LINK}/trending/movie/week?api_key=${API_KEY}&page=${page}`
     );
