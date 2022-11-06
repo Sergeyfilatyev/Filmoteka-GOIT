@@ -7,11 +7,11 @@ export function removeFilmFromLibrary(movieID, userLibrary) {
     return movie.id !== +movieID;
   });
 
-  updatedLibraryStorage =
-  updatedLibraryStorage.length ? updatedLibraryStorage : null;
-    localStorage.save(userLibrary, updatedLibraryStorage);
+  updatedLibraryStorage = updatedLibraryStorage.length
+    ? updatedLibraryStorage
+    : null;
+  localStorage.save(userLibrary, updatedLibraryStorage);
 }
-
 
 //* Добавляем фильм  можем использовать в кнопках watched queued
 export function addFilmToLibrary(movieID, userLibrary) {
