@@ -1,5 +1,6 @@
 import { refs } from './refs';
 import { markupSearchFilms } from './markup-search-films';
+import './pagination';
 
 // const searchForm = document.querySelector('.header__form');
 // const searchInput = document.querySelector('.header__input');
@@ -11,6 +12,7 @@ refs.searchForm.addEventListener('submit', submitForm);
 
 async function submitForm(event) {
   event.preventDefault();
+  refs.currentPage = 1;
 
   if (refs.searchInput.value.trim() === '') {
     textError.textContent = 'Please, enter the name of the movie';

@@ -16,4 +16,5 @@ export const refs = {
   toWatchedBtn: document.querySelector('.watched'),
   toQueueBtn: document.querySelector('.queue'),
   pagination: document.querySelector('.pagination'),
+  currentPage: 1,
 };
