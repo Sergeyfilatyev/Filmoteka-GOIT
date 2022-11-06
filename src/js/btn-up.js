@@ -7,8 +7,11 @@ window.addEventListener('scroll', throttle(hideElOnScroll(refs.upBtn), 250));
 refs.upBtn.addEventListener('click', toPageTopOnClick);
 
 function hideElOnScroll(el) {
-  return function hideOnScroll(e) {
-    if (pageYOffset < document.documentElement.clientHeight) {
+  return function hideOnScroll() {
+    if (
+      pageYOffset < document.documentElement.clientHeight ||
+      refs.modalFooter.classList.contains('visibility-hidden') === false
+    ) {
       el.classList.add('visually-hidden');
     } else {
       el.classList.remove('visually-hidden');
