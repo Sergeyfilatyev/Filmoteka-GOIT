@@ -1,12 +1,12 @@
 import { fetchById } from './fetch';
 import { refs } from './refs';
-console.log('hbhss');
 
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
 async function onMovieImageClick(event) {
   event.preventDefault();
+
   if (event.target.nodeName !== 'IMG') {
     return;
   }
@@ -38,7 +38,6 @@ async function onMovieImageClick(event) {
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-  // modalCardMarkup();
 }
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
