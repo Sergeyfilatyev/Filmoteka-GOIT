@@ -2,6 +2,7 @@ import { fetchPopular } from './fetch';
 
 import { refs } from './refs';
 import { markupPopularFilms } from './markup-popular-films';
+import { markupSearchFilms } from './markup-search-films';
 
 // async function main() {
 //   const getData = await markupPopularFilms(page);
@@ -94,13 +95,17 @@ function createPagination(totalPages, page) {
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
 }
 
-createPagination(totalPages, 1);
+createPagination(totalPages, refs.currentPage);
+
 console.log('hello');
 refs.pagination.addEventListener('click', onclick);
 
 async function onclick(event) {
   console.log(event.target.dataset.id);
+
   const markupPagination = await markupPopularFilms(event.target.dataset.id);
+  refs.currentPage = +event.target.dataset.id;
+  createPagination(totalPages, refs.currentPage);
 
   return markupPagination;
 }
