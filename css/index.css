@@ -539,6 +539,7 @@ body {
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 38px;
+  min-height: 600px;
 }
 
 .popular-film__card {
