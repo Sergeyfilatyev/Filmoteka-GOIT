@@ -15,5 +15,5 @@ export const refs = {
   modalCloseBtn: document.querySelector('.modal-btn-close'),
   toWatchedBtn: document.querySelector('.watched'),
   toQueueBtn: document.querySelector('.queue'),
-
+  pagination: document.querySelector('.pagination'),
 };

@@ -873,4 +873,70 @@ body {
 }
 .second-line__text {
   cursor: pointer;
+}
+
+.pagination ul {
+  min-width: 374px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 7px;
+  height: 16px;
+}
+
+.pagination ul li.numb {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 3px;
+}
+
+.pagination ul li.dots {
+  width: 11px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: default;
+}
+
+.pagination ul li.btn {
+  width: 40px;
+  height: 40px;
+}
+
+.pagination ul li.prev {
+  color: #000000;
+  background-color: #F7F7F7;
+  border-radius: 25px 5px 5px 25px;
+}
+
+.pagination ul li.next {
+  color: #000000;
+  background-color: #F7F7F7;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.pagination ul li.active,
+.pagination ul li.numb:hover,
+.pagination ul li.btn:hover {
+  color: #fff;
+  background: #FF6B08;
 }/*# sourceMappingURL=index.css.map */
