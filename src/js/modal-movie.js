@@ -1,9 +1,17 @@
 import { fetchById } from './fetch';
 import { refs } from './refs';
+import {
+  addToStorage,
+  getFromStorage,
+  removeFromStorage,
+} from './localStorage';
+
+//let filmsInWatched = [];
 
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
+let movie = {};
 async function onMovieImageClick(event) {
   event.preventDefault();
 
@@ -13,7 +21,7 @@ async function onMovieImageClick(event) {
 
   console.log(event.target.dataset.id);
   // fetchById(event.target.dataset.id).then(console.log);
-  const movie = await fetchById(event.target.dataset.id);
+  movie = await fetchById(event.target.dataset.id);
   refs.modal.innerHTML = '';
   refs.modal.insertAdjacentHTML(
     'beforeend',
@@ -36,12 +44,62 @@ async function onMovieImageClick(event) {
   openModal();
 }
 
-function openModal() {
-  refs.backdrop.classList.remove('is-hidden');
-}
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
 }
 function onCloseBtnClick() {
   closeModal();
+}
+
+
+//?   то что добавил к Леры файлу moda-movie ========================================================================
+let filmsInWatched = [];
+let filmsInQueue = [];
+
+function openModal() {
+  refs.backdrop.classList.remove('is-hidden');
+  const watchBtn = document.querySelector('.watched');
+  watchBtn.addEventListener('click', onWatchedBtnClick);
+
+ const queueBtn = document.querySelector('.queue');
+  queueBtn.addEventListener('click', onQueuedBtnClick);
+}
+
+function checkLibraryStorage() {
+  if (getFromStorage('watched')) {
+    filmsInWatched = getFromStorage('watched');
+  }
+
+  if (getFromStorage('queue')) {
+    filmsInQueue = getFromStorage('queue');
+  }
+};
+
+
+function onWatchedBtnClick(e) {
+  if (!movie.id) {
+    return alert('Movie not find');
+  }
+  checkLibraryStorage()
+ 
+  if (filmsInWatched.find(film => film.id === movie.id)) {
+    return;
+  }
+  filmsInWatched.push(movie);
+
+  addToStorage('watched', filmsInWatched);
+}
+
+
+ function onQueuedBtnClick(e) {
+  if (!movie.id) {
+    return alert('Movie not find');
+  }
+  checkLibraryStorage()
+  if (filmsInQueue.find(film => film.id === movie.id)) {
+    return;
+  }
+  filmsInQueue.push(movie);
+
+  addToStorage('queue', filmsInQueue);
 }
