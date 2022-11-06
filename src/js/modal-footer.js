@@ -12,7 +12,7 @@ function openModal() {
 function closeModal() {
   refs.modalFooter.classList.add('visibility-hidden');
   document.removeEventListener('keydown', onEscapePress);
-  refs.upBtn.classList.remove('visually-hidden');
+  // refs.upBtn.classList.remove('visually-hidden');
 }
 
 function onEscapePress(event) {

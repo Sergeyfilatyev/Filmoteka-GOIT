@@ -1,16 +1,17 @@
-const save = (key, value) => {
+export const addToStorage = (key, value) => {
   try {
-    const serializedState = JSON.stringify(value);
-    localStorage.setItem(key, serializedState);
-  } catch (error) {
+    if (typeof value === 'string') {
+      localStorage.setItem(key, value);
+    } else {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+  }  catch (error) {
     console.log(`Error key: ${key} saving to local strage; `, error.message);
   }
 };
 
-export let loadedlibrary;
-const load = key => {
+export const getFromStorage = key => {
   try {
-    loadedlibrary = key;
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
@@ -18,7 +19,7 @@ const load = key => {
   }
 };
 
-const remove = key => {
+export const removeFromStorage = key => {
   try {
     localStorage.removeItem(key);
   } catch (error) {
@@ -27,10 +28,4 @@ const remove = key => {
       error.message
     );
   }
-};
-
-export default {
-  save,
-  load,
-  remove,
 };
