@@ -12,7 +12,7 @@ refs.searchForm.addEventListener('submit', submitForm);
 
 async function submitForm(event) {
   event.preventDefault();
-  refs.currentPage = 1;
+  // refs.currentPage = 1;
 
   if (refs.searchInput.value.trim() === '') {
     textError.textContent = 'Please, enter the name of the movie';
