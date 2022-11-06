@@ -535,6 +535,19 @@ body {
     clip-path: inset(0 0 0 100%);
   }
 }
+.empty-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-page_text {
+  font-weight: 500;
+  font-size: 22px;
+}
+
 .popular-films {
   display: flex;
   flex-wrap: wrap;
@@ -876,12 +889,12 @@ body {
   left: 50%;
   text-align: center;
   width: 310px;
-  height: 500px;
-  background-color: var(--footer-bg-color);
+  height: 450px;
+  background-color: var(--main-accent-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: auto;
-  padding: 40px;
+  padding: 20px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -911,7 +924,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -932,6 +945,10 @@ body {
 
 .team_item {
   margin-bottom: 20px;
+  background-color: var(--footer-bg-color);
+  padding: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .teammate {
@@ -967,15 +984,81 @@ body {
 
 @media screen and (min-width: 768px) {
   .modal_footer {
-    width: 450px;
+    width: 600px;
   }
 }
 @media screen and (min-width: 1200px) {
   .modal_footer {
-    width: 700px;
-    height: 600px;
+    width: 1150px;
+    height: 800px;
   }
 }
 .second-line__text {
   cursor: pointer;
+}
+
+.pagination ul {
+  min-width: 374px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 7px;
+  height: 16px;
+}
+
+.pagination ul li.numb {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 3px;
+}
+
+.pagination ul li.dots {
+  width: 11px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: default;
+}
+
+.pagination ul li.btn {
+  width: 40px;
+  height: 40px;
+}
+
+.pagination ul li.prev {
+  color: #000000;
+  background-color: #F7F7F7;
+  border-radius: 25px 5px 5px 25px;
+}
+
+.pagination ul li.next {
+  color: #000000;
+  background-color: #F7F7F7;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.pagination ul li.active,
+.pagination ul li.numb:hover,
+.pagination ul li.btn:hover {
+  color: #fff;
+  background: #FF6B08;
 }/*# sourceMappingURL=index.css.map */
