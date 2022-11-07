@@ -1,0 +1,12 @@
+.empty-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-page_text {
+  font-weight: 500;
+  font-size: 22px;
+}

@@ -8,4 +8,8 @@ import './js/btn-up';
 import './js/modal-footer';
 
 import './js/modal-movie';
+
 import './js/watched-queued-library'
+
+import './js/pagination';
+

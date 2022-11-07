@@ -13,7 +13,12 @@ export const refs = {
   backdrop: document.querySelector('.backdrop'),
   modal: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal-btn-close'),
+
+  modalContainer: document.querySelector('.modal-container'),
+
   toWatchedBtn: document.querySelector('.watched'),
   toQueueBtn: document.querySelector('.queue'),
+  pagination: document.querySelector('.pagination'),
+  currentPage: 1,
 
 };
