@@ -21,7 +21,7 @@ function onEscapePress(event) {
   }
 }
 function onClickPress(event) {
-  console.log(event.target);
+  // console.log(event.target);
 }
 
-console.log(refs.login);
+// console.log(refs.login);

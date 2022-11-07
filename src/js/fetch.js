@@ -1,3 +1,5 @@
+import { refs } from './refs';
+
 const axios = require('axios').default;
 
 const BASIC_QUERY_LINK = 'https://api.themoviedb.org/3';
@@ -33,13 +35,16 @@ export async function fetchPopular(page) {
     });
 
     let totalPages = response.data.total_pages;
+    refs.totalPages = totalPages;
     let totalMovies = response.data.total_results;
 
     const result = {
       totalPages,
       totalMovies,
       movies,
+      type: 'popular',
     };
+    refs.type = result.type;
 
     document.querySelector('.spinner').style.display = 'none';
 
@@ -58,7 +63,7 @@ export async function fetchByName(query, page) {
     );
 
     const genderId = await fetchGenresId();
-
+    console.log(response);
     const movies = response.data.results.map(object => {
       let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       let name = object.title;
@@ -81,13 +86,16 @@ export async function fetchByName(query, page) {
     });
 
     let totalPages = response.data.total_pages;
+    refs.totalPages = totalPages;
     let totalMovies = response.data.total_results;
 
     const result = {
       totalPages,
       totalMovies,
       movies,
+      type: 'search',
     };
+    refs.type = result.type;
 
     console.log(result);
 

@@ -22,4 +22,6 @@ export const refs = {
   currentPage: 1,
   login: document.querySelector('.btn-login'),
   loginModal: document.querySelector('.modalAuthor-wrapper'),
+  totalPages: 1000,
+  type: '',
 };
