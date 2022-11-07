@@ -28,8 +28,8 @@ export async function markupSearchFilms(query, page) {
           />
           <div class="info">
             <p class="info__name">${
-              movie.name.length >= 37
-                ? movie.name.substring(0, 37) + '...'
+              movie.name.length >= 50
+                ? movie.name.substring(0, 50) + '...'
                 : movie.name
             }</p>
             <p class="info__other">${movie.genres[0]}, ${
@@ -53,8 +53,8 @@ export async function markupSearchFilms(query, page) {
       />
       <div class="info">
         <p class="info__name">${
-          movie.name.length >= 37
-            ? movie.name.substring(0, 37) + '...'
+          movie.name.length >= 50
+            ? movie.name.substring(0, 50) + '...'
             : movie.name
         }</p>
         <p class="info__other">${movie.genres.join(', ')} | ${
