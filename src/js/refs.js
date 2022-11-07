@@ -20,4 +20,6 @@ export const refs = {
   toQueueBtn: document.querySelector('.queue'),
   pagination: document.querySelector('.pagination'),
   currentPage: 1,
+
+  watchedFilmsList: document.querySelector('.watchedFilms'),
 };
