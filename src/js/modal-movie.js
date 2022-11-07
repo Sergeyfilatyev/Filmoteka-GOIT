@@ -65,6 +65,7 @@ function openModal() {
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   document.removeEventListener('keydown', onEscKeyPress);
+
 }
 function onCloseBtnClick() {
   closeModal();
