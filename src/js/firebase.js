@@ -1,21 +1,58 @@
-// import firebase from 'firebase/app';
 // import { initializeApp } from 'firebase/app';
-// import 'firebase/auth';
-// import 'firebase/database';
-// import MicroModal from 'micromodal';
 
 // const firebaseConfig = {
-//   apiKey: 'AIzaSyBaRDlIlLMAIsF5z_rWARe4PwkTh94380k',
-//   authDomain: 'filmoteka-182a3.firebaseapp.com',
-//   projectId: 'filmoteka-182a3',
-//   storageBucket: 'filmoteka-182a3.appspot.com',
-//   messagingSenderId: '137366624126',
-//   appId: '1:137366624126:web:c33e3145ebadf53b17c52f',
-//   measurementId: 'G-SVXL4TYHMR',
+//   apiKey: 'AIzaSyBUUOWhb_7XbOzuT8pTA1Wpw-PNq4k4ukE',
+//   authDomain: 'filmoteka-goit-group.firebaseapp.com',
+//   databaseURL:
+//     'https://filmoteka-goit-group-default-rtdb.europe-west1.firebasedatabase.app',
+//   projectId: 'filmoteka-goit-group',
+//   storageBucket: 'filmoteka-goit-group.appspot.com',
+//   messagingSenderId: '736037255329',
+//   appId: '1:736037255329:web:340106162f8d67d6e558e0',
 // };
 
 // // Initialize Firebase
-// initializeApp(firebaseConfig);
-fetch(
-  'https://filmoteka-goit-group-default-rtdb.europe-west1.firebasedatabase.app/filmoteka.json'
-).then(console.log);
+// const app = initializeApp(firebaseConfig);
+
+// function postToFirebase(movie) {
+//   return fetch(
+//     'https://filmoteka-goit-group-default-rtdb.europe-west1.firebasedatabase.app/filmoteka.json',
+//     {
+//       method: 'POST',
+//       body: JSON.stringify(movie),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     }
+//   )
+//     .then(response => response.json())
+//     .then(response => console.log(response));
+// }
+// const obj = {
+//   a: 1,
+//   d: 34,
+// };
+// postToFirebase(obj).then(response => console.log('hello'));
+// function addToLocalStorage() {}
+// function getToFirebase() {
+//   return fetch(
+//     'https://filmoteka-goit-group-default-rtdb.europe-west1.firebasedatabase.app/filmoteka.json'
+//   )
+//     .then(response => response.json())
+//     .then(response => console.log(response));
+// }
+// getToFirebase();
+// function authWithEmailPassword(email, password) {
+//   return fetch(
+//     `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseConfig.apiKey}`,
+//     {
+//       method: 'POST',
+//       body: JSON.stringify({ email, password, returnSecureToken: true }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     }
+//   )
+//     .then(response => response.json())
+//     .then(data => console.log(data));
+// }

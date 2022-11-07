@@ -97,7 +97,6 @@ function createPagination(totalPages, page) {
 
 createPagination(totalPages, refs.currentPage);
 
-console.log('hello');
 refs.pagination.addEventListener('click', onclick);
 
 async function onclick(event) {
