@@ -21,7 +21,7 @@ async function onMovieImageClick(event) {
   console.log(event.target.dataset.id);
 
   const movie = await fetchById(event.target.dataset.id);
-
+  console.log(movie);
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
     'beforeend',
