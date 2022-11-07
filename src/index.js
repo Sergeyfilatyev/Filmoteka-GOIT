@@ -13,3 +13,4 @@ import './js/modal-movie';
 
 import './js/pagination';
 import './js/firebase';
+import './js/modalAuthor';
