@@ -99,37 +99,6 @@ document.querySelector('.backdrop').addEventListener('click', event => {
   }
 });
 
-// function deleteQueueFilm(data) {
-//   queueFilms.forEach((film, index) => {
-//     if (film.id === data.id) {
-//       if (headerQueueButton.classList.contains('active-header-button')) {
-//         if (queueFilms.length === size + 1) {
-//           page -= 1;
-//         }
-//         queueFilms.splice(index, 1);
-//         localStorage.setItem('queue', JSON.stringify(queueFilms));
-//         if (
-//           localStorage.getItem('queue') &&
-//           localStorage.getItem('queue') !== '[]'
-//         ) {
-//           renderQueueFilms(page);
-//         } else {
-//           paginationList.innerHTML = `
-//                   <div class="empty-page">
-//                   <img src="./img/empty.jpg" alt="no films img" />
-//                   <span class="empty-page_text">There are no films here yet</span>
-//                   </div>
-//                   `;
-//           queueList.innerHTML = '';
-//         }
-
-//         toggleModal();
-//         window.removeEventListener('keydown', onEscClose);
-//       }
-//     }
-//   });
-// }
-
 function deleteWatchedFilm(data) {
   const films = JSON.parse(localStorage.getItem('watched'));
 
@@ -145,7 +114,7 @@ function deleteWatchedFilm(data) {
       } else {
         refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
@@ -171,7 +140,7 @@ function deleteQueueFilm(data) {
       } else {
         refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
