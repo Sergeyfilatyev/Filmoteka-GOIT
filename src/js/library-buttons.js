@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { renderWatchedFilms, renderQueueFilms } from './watchedRender';
 // const headerWatchedButton = document.querySelector('.header__watched_button');
 // const headerQueueButton = document.querySelector('.header__queue_button');
 
@@ -9,6 +10,19 @@ refs.headerWatchedButton.addEventListener('click', () => {
 
   refs.headerWatchedButton.classList.add('active-header-button');
   refs.headerQueueButton.classList.remove('active-header-button');
+  if (
+    localStorage.getItem('watched') &&
+    localStorage.getItem('watched') !== '[]'
+  ) {
+    renderWatchedFilms();
+  } else {
+    refs.watchedFilmsList.innerHTML = `
+    <div class="empty-page">
+    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <span class="empty-page_text">There are no films here yet</span>
+  </div>
+    `;
+  }
 });
 
 refs.headerQueueButton.addEventListener('click', () => {
@@ -18,4 +32,14 @@ refs.headerQueueButton.addEventListener('click', () => {
 
   refs.headerQueueButton.classList.add('active-header-button');
   refs.headerWatchedButton.classList.remove('active-header-button');
+  if (localStorage.getItem('queue') && localStorage.getItem('queue') !== '[]') {
+    renderQueueFilms();
+  } else {
+    refs.watchedFilmsList.innerHTML = `
+    <div class="empty-page">
+    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <span class="empty-page_text">There are no films here yet</span>
+  </div>
+    `;
+  }
 });

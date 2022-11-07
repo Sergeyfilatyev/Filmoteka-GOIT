@@ -6,7 +6,7 @@ import {
   removeFromStorage,
 } from './localStorage';
 
-//let filmsInWatched = [];
+let movieForStorage = {};
 
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
@@ -54,27 +54,17 @@ async function onMovieImageClick(event) {
     </div>`
   );
   openModal();
+  movieForStorage = movie;
 }
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
   document.addEventListener('keydown', onEscKeyPress);
-  const watchedBtn = document.querySelector('.watched');
-  watchedBtn.addEventListener('click');
-
-  const queueBtn = document.querySelector('.queue');
-  queueBtn.addEventListener('click');
 }
 
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   document.removeEventListener('keydown', onEscKeyPress);
-
-  const watchedBtn = document.querySelector('.watched');
-  // watchedBtn.removeEventListener('');
-
-  const queueBtn = document.querySelector('.queue');
-  // queueBtn.removeEventListener('');
 }
 function onCloseBtnClick() {
   closeModal();
@@ -104,28 +94,28 @@ function checkLibraryStorage() {
 }
 
 function onWatchedBtnClick(e) {
-  if (!movie.id) {
+  if (!movieForStorage.id) {
     return alert('Movie not find');
   }
   checkLibraryStorage();
 
-  if (filmsInWatched.find(film => film.id === movie.id)) {
+  if (filmsInWatched.find(film => film.id === movieForStorage.id)) {
     return;
   }
-  filmsInWatched.push(movie);
+  filmsInWatched.push(movieForStorage);
 
   addToStorage('watched', filmsInWatched);
 }
 
 function onQueuedBtnClick(e) {
-  if (!movie.id) {
+  if (!movieForStorage.id) {
     return alert('Movie not find');
   }
   checkLibraryStorage();
-  if (filmsInQueue.find(film => film.id === movie.id)) {
+  if (filmsInQueue.find(film => film.id === movieForStorage.id)) {
     return;
   }
-  filmsInQueue.push(movie);
+  filmsInQueue.push(movieForStorage);
 
   addToStorage('queue', filmsInQueue);
 }
