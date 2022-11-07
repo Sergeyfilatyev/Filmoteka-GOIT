@@ -18,7 +18,7 @@ refs.headerWatchedButton.addEventListener('click', () => {
   } else {
     refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
@@ -37,7 +37,7 @@ refs.headerQueueButton.addEventListener('click', () => {
   } else {
     refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/empty.e9257588.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
