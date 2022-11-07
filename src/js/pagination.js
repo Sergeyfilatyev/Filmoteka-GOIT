@@ -93,6 +93,7 @@ export function createPagination(totalPages, page) {
 </li>`;
   }
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 createPagination(refs.totalPages, refs.currentPage);
 refs.pagination.addEventListener('click', onclick);
