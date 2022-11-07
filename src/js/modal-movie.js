@@ -70,10 +70,10 @@ function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   document.removeEventListener('keydown', onEscKeyPress);
 
-  const watchedBtn = document.querySelector('.watched');
-  // watchedBtn.removeEventListener('');
+  // const watchedBtn = document.querySelector('.watched');
+  // // watchedBtn.removeEventListener('');
 
-  const queueBtn = document.querySelector('.queue');
+  // const queueBtn = document.querySelector('.queue');
   // queueBtn.removeEventListener('');
 }
 function onCloseBtnClick() {
