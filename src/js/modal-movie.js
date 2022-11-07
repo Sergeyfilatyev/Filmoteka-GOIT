@@ -71,10 +71,10 @@ function closeModal() {
   document.removeEventListener('keydown', onEscKeyPress);
 
   const watchedBtn = document.querySelector('.watched');
-  watchedBtn.removeEventListener();
+  // watchedBtn.removeEventListener('');
 
   const queueBtn = document.querySelector('.queue');
-  queueBtn.removeEventListener();
+  // queueBtn.removeEventListener('');
 }
 function onCloseBtnClick() {
   closeModal();
