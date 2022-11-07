@@ -12,3 +12,4 @@ import './js/modal-movie';
 // import './js/watched-queued-library'
 
 import './js/pagination';
+import './js/firebase';
