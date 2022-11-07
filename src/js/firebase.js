@@ -18,4 +18,4 @@
 // initializeApp(firebaseConfig);
 fetch(
   'https://filmoteka-goit-group-default-rtdb.europe-west1.firebasedatabase.app/filmoteka.json'
-);
+).then(console.log);
