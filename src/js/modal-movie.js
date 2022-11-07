@@ -11,7 +11,6 @@ import {
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
-let movie = {};
 async function onMovieImageClick(event) {
   event.preventDefault();
 
@@ -19,17 +18,12 @@ async function onMovieImageClick(event) {
     return;
   }
 
-
   console.log(event.target.dataset.id);
-  // fetchById(event.target.dataset.id).then(console.log);
-  movie = await fetchById(event.target.dataset.id);
-  refs.modal.innerHTML = '';
-  refs.modal.insertAdjacentHTML(
 
   const movie = await fetchById(event.target.dataset.id);
+
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
-
     'beforeend',
     `<div id="${movie.id}" class="movie-card">
         <img src="${movie.cover}" alt="${
@@ -62,8 +56,6 @@ async function onMovieImageClick(event) {
   openModal();
 }
 
-
-
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
   document.addEventListener('keydown', onEscKeyPress);
@@ -77,6 +69,7 @@ function openModal() {
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   document.removeEventListener('keydown', onEscKeyPress);
+
   const watchedBtn = document.querySelector('.watched');
   watchedBtn.removeEventListener();
 
@@ -87,8 +80,6 @@ function onCloseBtnClick() {
   closeModal();
 }
 
-
-
 //?   то что добавил к Леры файлу moda-movie ========================================================================
 let filmsInWatched = [];
 let filmsInQueue = [];
@@ -98,7 +89,7 @@ function openModal() {
   const watchBtn = document.querySelector('.watched');
   watchBtn.addEventListener('click', onWatchedBtnClick);
 
- const queueBtn = document.querySelector('.queue');
+  const queueBtn = document.querySelector('.queue');
   queueBtn.addEventListener('click', onQueuedBtnClick);
 }
 
@@ -110,15 +101,14 @@ function checkLibraryStorage() {
   if (getFromStorage('queue')) {
     filmsInQueue = getFromStorage('queue');
   }
-};
-
+}
 
 function onWatchedBtnClick(e) {
   if (!movie.id) {
     return alert('Movie not find');
   }
-  checkLibraryStorage()
- 
+  checkLibraryStorage();
+
   if (filmsInWatched.find(film => film.id === movie.id)) {
     return;
   }
@@ -127,12 +117,11 @@ function onWatchedBtnClick(e) {
   addToStorage('watched', filmsInWatched);
 }
 
-
- function onQueuedBtnClick(e) {
+function onQueuedBtnClick(e) {
   if (!movie.id) {
     return alert('Movie not find');
   }
-  checkLibraryStorage()
+  checkLibraryStorage();
   if (filmsInQueue.find(film => film.id === movie.id)) {
     return;
   }
@@ -140,10 +129,9 @@ function onWatchedBtnClick(e) {
 
   addToStorage('queue', filmsInQueue);
 }
-=======
+
 function onEscKeyPress(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
 }
-
