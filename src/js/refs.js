@@ -20,8 +20,12 @@ export const refs = {
   toQueueBtn: document.querySelector('.queue'),
   pagination: document.querySelector('.pagination'),
   currentPage: 1,
+
   login: document.querySelector('.btn-login'),
   loginModal: document.querySelector('.modalAuthor-wrapper'),
   totalPages: 1000,
   type: '',
+
+  watchedFilmsList: document.querySelector('.watchedFilms'),
+
 };

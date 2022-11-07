@@ -1,5 +1,6 @@
 import { fetchById } from './fetch';
 import { refs } from './refs';
+import { renderWatchedFilms, renderQueueFilms } from './watchedRender';
 import {
   addToStorage,
   getFromStorage,
@@ -7,21 +8,19 @@ import {
 } from './localStorage';
 
 let movieForStorage = {};
+let filmsInWatched = [];
+let filmsInQueue = [];
 
-refs.popularFilms.addEventListener('click', onMovieImageClick);
+refs.watchedFilmsList.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
 async function onMovieImageClick(event) {
-  event.preventDefault();
-
   if (event.target.nodeName !== 'IMG') {
     return;
   }
 
-  console.log(event.target.dataset.id);
-
   const movie = await fetchById(event.target.dataset.id);
-  console.log(movie);
+
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
     'beforeend',
@@ -53,36 +52,106 @@ async function onMovieImageClick(event) {
     <button type="button" class="modal-btn queue">ADD TO QUEUE</button>
     </div>`
   );
+
   openModal();
   movieForStorage = movie;
+
+  if (
+    document
+      .querySelector('.header__watched_button')
+      .classList.contains('active-header-button')
+  ) {
+    const watchedDelete = document.querySelector('.watched');
+    watchedDelete.textContent = 'DELETE';
+    watchedDelete.addEventListener('click', () => {
+      deleteWatchedFilm(movie);
+    });
+    const addToQueue = document.querySelector('.queue');
+    addToQueue.addEventListener('click', onQueuedBtnClick);
+  } else {
+    const queueDelete = document.querySelector('.queue');
+    queueDelete.textContent = 'DELETE';
+    queueDelete.addEventListener('click', () => {
+      deleteQueueFilm(movie);
+    });
+    const addToWatched = document.querySelector('.watched');
+    addToWatched.addEventListener('click', onWatchedBtnClick);
+  }
 }
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-  document.addEventListener('keydown', onEscKeyPress);
+
+  window.addEventListener('keydown', onEscKeyPress);
 }
 
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
-  document.removeEventListener('keydown', onEscKeyPress);
-
+  window.removeEventListener('keydown', onEscKeyPress);
 }
 function onCloseBtnClick() {
   closeModal();
 }
 
-//?   то что добавил к Леры файлу moda-movie ========================================================================
-let filmsInWatched = [];
-let filmsInQueue = [];
+document.querySelector('.backdrop').addEventListener('click', event => {
+  if (event.target.classList.contains('backdrop')) {
+    closeModal();
+  }
+});
 
-function openModal() {
-  refs.backdrop.classList.remove('is-hidden');
-  const watchBtn = document.querySelector('.watched');
-  watchBtn.addEventListener('click', onWatchedBtnClick);
+function deleteWatchedFilm(data) {
+  const films = JSON.parse(localStorage.getItem('watched'));
 
-  const queueBtn = document.querySelector('.queue');
-  queueBtn.addEventListener('click', onQueuedBtnClick);
+  films.forEach((film, index) => {
+    if (film.id === data.id) {
+      films.splice(index, 1);
+      localStorage.setItem('watched', JSON.stringify(films));
+      if (
+        localStorage.getItem('watched') &&
+        localStorage.getItem('watched') !== '[]'
+      ) {
+        renderWatchedFilms();
+      } else {
+        refs.watchedFilmsList.innerHTML = `
+    <div class="empty-page">
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+    <span class="empty-page_text">There are no films here yet</span>
+  </div>
+    `;
+      }
+
+      closeModal();
+    }
+  });
 }
+
+function deleteQueueFilm(data) {
+  const films = JSON.parse(localStorage.getItem('queue'));
+
+  films.forEach((film, index) => {
+    if (film.id === data.id) {
+      films.splice(index, 1);
+      localStorage.setItem('queue', JSON.stringify(films));
+      if (
+        localStorage.getItem('queue') &&
+        localStorage.getItem('queue') !== '[]'
+      ) {
+        renderQueueFilms();
+      } else {
+        refs.watchedFilmsList.innerHTML = `
+    <div class="empty-page">
+    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+    <span class="empty-page_text">There are no films here yet</span>
+  </div>
+    `;
+      }
+
+      closeModal();
+    }
+  });
+}
+
+//?   то что добавил к Леры файлу moda-movie ========================================================================
 
 function checkLibraryStorage() {
   if (getFromStorage('watched')) {

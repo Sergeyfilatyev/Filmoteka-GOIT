@@ -116,6 +116,7 @@ export async function fetchById(id) {
     );
     let cover =
       'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    let year = response.data.release_date.substring(0, 4);
     let name = response.data.title;
     let rating = response.data.vote_average;
     let votes = response.data.vote_count;
@@ -135,6 +136,7 @@ export async function fetchById(id) {
       about,
       id,
       genres,
+      year,
     };
 
     document.querySelector('.spinner').style.display = 'none';
