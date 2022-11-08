@@ -100,6 +100,7 @@ body {
 }
 
 .header__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 40px;
@@ -247,6 +248,22 @@ body {
   border: none;
 }
 
+.theme {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+.theme-btn-light {
+  width: 60px;
+  height: 40px;
+}
+
+.theme-btn-dark {
+  width: 60px;
+  height: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .header__home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)), url("../src/images/header/header_img_Tabl.jpg");
@@ -312,7 +329,6 @@ body {
   }
 }
 .footer {
-  background: #f7f7f7;
   padding-top: 29px;
   padding-bottom: 29px;
 }
@@ -679,7 +695,6 @@ body {
   padding: 50px 20px 40px 20px;
   overflow: auto;
   transform: translate(-50%, -50%);
-  background-color: var(--main-accent-color);
   z-index: 101;
   overflow-y: auto;
   transform: translate(-50%);
@@ -862,7 +877,6 @@ body {
   text-align: center;
   width: 310px;
   height: 450px;
-  background-color: var(--main-accent-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: auto;
@@ -969,6 +983,10 @@ body {
   cursor: pointer;
 }
 
+.info__name.info__name-dark {
+  color: #FFFFFF;
+}
+
 .pagination ul {
   min-width: 374px;
   padding: 8px;
@@ -1033,4 +1051,40 @@ body {
 .pagination ul li.btn:hover {
   color: #fff;
   background: #FF6B08;
+}
+
+body.theme-dark {
+  background-color: #543d31;
+}
+body.theme-dark .footer {
+  background-color: #301d12;
+}
+body.theme-dark .modal {
+  background-color: #543d31;
+}
+body.theme-dark .modal_footer {
+  background-color: #543d31;
+}
+body.theme-dark .theme__dark {
+  display: none;
+}
+body.theme-dark .theme__ligth {
+  display: block;
+}
+
+body.theme-light {
+  background-color: var(--main-accent-color);
+}
+body.theme-light .footer {
+  background-color: var(--footer-bg-color);
+}
+body.theme-light .modal {
+  background-color: var(--main-accent-color);
+}
+body.theme-light .modal_footer {
+  background-color: var(--footer-bg-color);
+}
+
+.theme__ligth {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

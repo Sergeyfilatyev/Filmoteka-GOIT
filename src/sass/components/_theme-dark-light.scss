@@ -1,0 +1,47 @@
+body.theme-dark {
+    background-color: #543d31;
+
+    .footer {
+            background-color: #301d12;
+        }
+
+    .modal {
+        background-color: #543d31;
+    }
+
+    .modal_footer {
+        background-color: #543d31;
+    }
+    .theme__dark{
+        display: none;
+    }
+    .theme__ligth{
+        display: block;
+    }
+}
+
+body.theme-light {
+    background-color: var(--main-accent-color);
+
+    .footer {
+        background-color: var(--footer-bg-color);
+    }
+
+    .modal {
+        background-color: var(--main-accent-color);
+    }
+
+    .modal_footer {
+        background-color: var(--footer-bg-color);
+    }
+
+}
+
+.theme__ligth{
+    display: none; 
+}
+
+
+
+
+
