@@ -13,6 +13,7 @@ export const refs = {
   backdrop: document.querySelector('.backdrop'),
   modal: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal-btn-close'),
+  youtubeBtn: document.querySelector('.youtube-btn'),
 
   modalContainer: document.querySelector('.modal-container'),
 
@@ -27,5 +28,4 @@ export const refs = {
   type: '',
 
   watchedFilmsList: document.querySelector('.watchedFilms'),
-
 };
