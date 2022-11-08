@@ -1,5 +1,6 @@
 import { fetchPopular } from './fetch';
 import { refs } from './refs';
+import { createPagination } from './pagination';
 
 export async function markupPopularFilms(page) {
   // const popularFilms = document.querySelector('.popular-films');

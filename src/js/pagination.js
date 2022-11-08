@@ -12,7 +12,7 @@ const ulTag = document.querySelector('ul');
 let totalPages = 20;
 
 //вызов функции с передачей параметров и добавлением внутреннего элемента, который является тегом ul
-function createPagination(totalPages, page) {
+export function createPagination(totalPages, page) {
   let liTag = '';
   let activeLi;
   let beforePages = page - 1; // пример: 5 - 1 = 4
@@ -93,19 +93,22 @@ function createPagination(totalPages, page) {
 </li>`;
   }
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-createPagination(totalPages, refs.currentPage);
-
-console.log('hello');
+createPagination(refs.totalPages, refs.currentPage);
 refs.pagination.addEventListener('click', onclick);
-
+let markupPagination;
 async function onclick(event) {
-  console.log(event.target.dataset.id);
-
-  const markupPagination = await markupPopularFilms(event.target.dataset.id);
+  if (refs.searchInput.value) {
+    markupPagination = await markupSearchFilms(
+      refs.searchInput.value,
+      event.target.dataset.id
+    );
+  } else {
+    markupPagination = await markupPopularFilms(event.target.dataset.id);
+  }
   refs.currentPage = +event.target.dataset.id;
-  createPagination(totalPages, refs.currentPage);
-
+  createPagination(refs.totalPages, refs.currentPage);
+  console.log(event.target.dataset.id);
   return markupPagination;
 }

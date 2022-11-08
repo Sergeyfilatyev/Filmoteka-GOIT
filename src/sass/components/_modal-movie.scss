@@ -1,10 +1,3 @@
-.backdrop.is-hidden {
-  // transform: scale(0);
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -12,23 +5,37 @@
   width: 100%;
   height: 100%;
   padding: 20px;
+  opacity: 1;
+  pointer-events: all;
   background-color: var(--backdrop-color);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 280px;
   padding: 50px 20px 40px 20px;
+  border-radius: 5px;
   overflow: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   background-color: var(--main-accent-color);
-  z-index: 101;
-  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  transform: translate(-50%);
-  transition: transform 250ms linear, opacity 250ms linear,
-    visibility 250ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-close {
@@ -44,12 +51,18 @@
   width: 30px;
   height: 30px;
   border: none;
-  background-color: tomato;
-  color: black;
+  background-color: transparent;
 }
+
 .modal-btn-icon {
-  fill: rgba(0, 0, 0, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .modal-btn-close:hover &,
+  .modal-btn-close:focus & {
+    fill: var(--active_color);
+  }
 }
+
 .modal-btn {
   width: 110px;
   height: 44px;
@@ -61,12 +74,10 @@
 .modal-btn:active {
   scale: 0.95;
 }
-.movie-card {
-  padding-top: 50px;
-}
 .movie-cover {
   width: 240px;
   height: 360px;
+  border-radius: 5px;
 }
 
 .movie-title {
@@ -81,13 +92,15 @@
   font-size: 12px;
   line-height: 1.33;
   color: var(--modal-text-color);
+  padding-bottom: 8px;
 }
 .movie-votes {
-  padding-left: 40px;
+  padding-left: 38px;
 }
 .movie-rating {
   background-color: var(--active_color);
   border-radius: 5px;
+  padding: 2px 2px 0 2px;
   color: var(--main-accent-color);
 }
 .movie-popular {
@@ -137,14 +150,27 @@
   color: var(--main-accent-color);
 }
 
-@media screen and(max-width: 767px) {
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.youtube-icon {
+  position: absolute;
+  top: 42px;
+  fill: #ff0000;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 767px) {
   .modal {
     height: 100%;
   }
 }
-@media screen and(min-width: 768px) {
+@media screen and (min-width: 768px) {
   .modal {
-    width: 700px;
+    width: 704px;
     top: 50%;
     transform: translate(-50%, -50%);
     padding-left: 30px;
@@ -176,15 +202,35 @@
     padding-top: 0;
   }
 
+  .modal-btn {
+    width: 125px;
+  }
+
   .movie-title {
     padding-top: 0;
   }
 }
-@media screen and(min-width:1024px) {
+@media screen and (min-width: 1024px) {
   .modal {
     width: 810px;
   }
+  .movie-cover {
+    min-width: 280px;
+    height: 398px;
+  }
+
   .movie-info {
     padding-left: 16px;
+    height: 300px;
+  }
+
+  .modal-btns-wrapper {
+    position: absolute;
+    right: 24%;
+    bottom: 20%;
+  }
+
+  .modal-btn {
+    width: 136px;
   }
 } ;
