@@ -7,6 +7,8 @@ import {
 } from './localStorage';
 
 let movieForStorage = {};
+let filmsInWatched = [];
+let filmsInQueue = [];
 
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
@@ -32,9 +34,9 @@ async function onMovieImageClick(event) {
     
         <div class="movie-info">
             <h2 class='movie-title'>${movie.name}</h2>
-            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${
-              movie.rating
-            }</span>/ ${movie.votes}</span></p>
+            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${movie.rating.toFixed(
+              2
+            )}</span>/ ${movie.votes}</span></p>
              <p class='text'>Popularity <span class='back-info movie-popular'>${
                movie.popularity
              }</span></p>
@@ -59,29 +61,27 @@ async function onMovieImageClick(event) {
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-  document.addEventListener('keydown', onEscKeyPress);
-}
-
-function closeModal() {
-  refs.backdrop.classList.add('is-hidden');
-  document.removeEventListener('keydown', onEscKeyPress);
-
-}
-function onCloseBtnClick() {
-  closeModal();
-}
-
-//?   то что добавил к Леры файлу moda-movie ========================================================================
-let filmsInWatched = [];
-let filmsInQueue = [];
-
-function openModal() {
-  refs.backdrop.classList.remove('is-hidden');
+  refs.modal.classList.add('active');
   const watchBtn = document.querySelector('.watched');
   watchBtn.addEventListener('click', onWatchedBtnClick);
 
   const queueBtn = document.querySelector('.queue');
   queueBtn.addEventListener('click', onQueuedBtnClick);
+
+  document.addEventListener('keydown', onEscKeyPress);
+  refs.backdrop.addEventListener('click', onBackdropClick);
+  document.body.classList.add('stop-scrolling');
+}
+
+function closeModal() {
+  refs.backdrop.classList.add('is-hidden');
+  document.removeEventListener('keydown', onEscKeyPress);
+  refs.backdrop.removeEventListener('click', onBackdropClick);
+  document.body.classList.remove('stop-scrolling');
+}
+
+function onCloseBtnClick() {
+  closeModal();
 }
 
 function checkLibraryStorage() {
@@ -123,6 +123,13 @@ function onQueuedBtnClick(e) {
 
 function onEscKeyPress(event) {
   if (event.key === 'Escape') {
+    closeModal();
+  }
+}
+
+function onBackdropClick(event) {
+  const backdrop = event.target.className;
+  if (backdrop === 'backdrop') {
     closeModal();
   }
 }
