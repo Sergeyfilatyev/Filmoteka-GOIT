@@ -163,12 +163,12 @@
   height: 50px;
 }
 
-@media screen and(max-width: 767px) {
+@media screen and (max-width: 767px) {
   .modal {
     height: 100%;
   }
 }
-@media screen and(min-width: 768px) {
+@media screen and (min-width: 768px) {
   .modal {
     width: 704px;
     top: 50%;
@@ -210,7 +210,7 @@
     padding-top: 0;
   }
 }
-@media screen and(min-width:1024px) {
+@media screen and (min-width: 1024px) {
   .modal {
     width: 810px;
   }
