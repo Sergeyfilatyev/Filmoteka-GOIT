@@ -165,6 +165,20 @@ body {
   outline: none;
 }
 
+.header__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.header__input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
 .header__input::placeholder {
   font-weight: 400;
   font-size: 14px;
@@ -176,6 +190,7 @@ body {
 .header__input:-webkit-autofill:hover,
 .header__input:-webkit-autofill:focus {
   -webkit-text-fill-color: #ffffff;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -404,10 +419,12 @@ body {
   stroke-dasharray: 62.75 188.25;
 }
 #wifi-loader svg.circle-outer circle.back {
-  animation: circle-outer 1.8s ease infinite 0.3s;
+  -webkit-animation: circle-outer 1.8s ease infinite 0.3s;
+          animation: circle-outer 1.8s ease infinite 0.3s;
 }
 #wifi-loader svg.circle-outer circle.front {
-  animation: circle-outer 1.8s ease infinite 0.15s;
+  -webkit-animation: circle-outer 1.8s ease infinite 0.15s;
+          animation: circle-outer 1.8s ease infinite 0.15s;
 }
 #wifi-loader svg.circle-middle {
   height: 60px;
@@ -417,10 +434,12 @@ body {
   stroke-dasharray: 42.5 127.5;
 }
 #wifi-loader svg.circle-middle circle.back {
-  animation: circle-middle 1.8s ease infinite 0.25s;
+  -webkit-animation: circle-middle 1.8s ease infinite 0.25s;
+          animation: circle-middle 1.8s ease infinite 0.25s;
 }
 #wifi-loader svg.circle-middle circle.front {
-  animation: circle-middle 1.8s ease infinite 0.1s;
+  -webkit-animation: circle-middle 1.8s ease infinite 0.1s;
+          animation: circle-middle 1.8s ease infinite 0.1s;
 }
 #wifi-loader svg.circle-inner {
   height: 34px;
@@ -430,10 +449,30 @@ body {
   stroke-dasharray: 22 66;
 }
 #wifi-loader svg.circle-inner circle.back {
-  animation: circle-inner 1.8s ease infinite 0.2s;
+  -webkit-animation: circle-inner 1.8s ease infinite 0.2s;
+          animation: circle-inner 1.8s ease infinite 0.2s;
 }
 #wifi-loader svg.circle-inner circle.front {
-  animation: circle-inner 1.8s ease infinite 0.05s;
+  -webkit-animation: circle-inner 1.8s ease infinite 0.05s;
+          animation: circle-inner 1.8s ease infinite 0.05s;
+}
+
+@-webkit-keyframes circle-outer {
+  0% {
+    stroke-dashoffset: 25;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 301;
+  }
+  80% {
+    stroke-dashoffset: 276;
+  }
+  100% {
+    stroke-dashoffset: 276;
+  }
 }
 
 @keyframes circle-outer {
@@ -453,6 +492,23 @@ body {
     stroke-dashoffset: 276;
   }
 }
+@-webkit-keyframes circle-middle {
+  0% {
+    stroke-dashoffset: 17;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 204;
+  }
+  80% {
+    stroke-dashoffset: 187;
+  }
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
 @keyframes circle-middle {
   0% {
     stroke-dashoffset: 17;
@@ -468,6 +524,23 @@ body {
   }
   100% {
     stroke-dashoffset: 187;
+  }
+}
+@-webkit-keyframes circle-inner {
+  0% {
+    stroke-dashoffset: 9;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 106;
+  }
+  80% {
+    stroke-dashoffset: 97;
+  }
+  100% {
+    stroke-dashoffset: 97;
   }
 }
 @keyframes circle-inner {
@@ -487,15 +560,32 @@ body {
     stroke-dashoffset: 97;
   }
 }
-@keyframes text-animation {
+@-webkit-keyframes text-animation {
   0% {
-    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
   }
   50% {
-    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
   100% {
-    clip-path: inset(0 0 0 100%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+}
+@keyframes text-animation {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
   }
 }
 .empty-page {
@@ -517,11 +607,12 @@ body {
   justify-content: space-between;
   gap: 20px;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   min-height: 600px;
 }
 
 .popular-film__card {
+  position: relative;
   width: 280px;
   height: 100%;
   border-radius: 5px;
@@ -578,6 +669,15 @@ body {
   color: var(--main-accent-color);
 }
 
+.btn-youtube {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ff0000;
+  width: 80px;
+  height: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .popular-films {
     gap: 32px;
@@ -588,13 +688,13 @@ body {
     width: 336px;
   }
   .popular-film__cover {
-    height: 455px;
+    height: 478px;
   }
   .info__name {
-    font-size: 16px;
+    font-size: 18px;
   }
   .info__other {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -606,15 +706,13 @@ body {
     height: 100%;
   }
   .popular-film__cover {
-    height: 390px;
+    height: 398px;
   }
   .info__name {
     font-size: 16px;
-    line-height: 1.2;
   }
   .info__other {
     font-size: 12px;
-    line-height: 1.2;
   }
   .info__rating {
     width: 40px;
@@ -1099,4 +1197,4 @@ body {
 .pagination ul li.btn:hover {
   color: #fff;
   background: #FF6B08;
-}
+}/*# sourceMappingURL=index.css.map */
