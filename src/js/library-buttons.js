@@ -23,6 +23,10 @@ refs.headerWatchedButton.addEventListener('click', () => {
   </div>
     `;
   }
+  document.querySelector('.spinner').style.display = 'flex';
+  setTimeout(() => {
+    document.querySelector('.spinner').style.display = 'none';
+  }, 400);
 });
 
 refs.headerQueueButton.addEventListener('click', () => {
@@ -42,4 +46,8 @@ refs.headerQueueButton.addEventListener('click', () => {
   </div>
     `;
   }
+  document.querySelector('.spinner').style.display = 'flex';
+  setTimeout(() => {
+    document.querySelector('.spinner').style.display = 'none';
+  }, 700);
 });
