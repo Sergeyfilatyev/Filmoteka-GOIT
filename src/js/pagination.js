@@ -109,6 +109,5 @@ async function onclick(event) {
   }
   refs.currentPage = +event.target.dataset.id;
   createPagination(refs.totalPages, refs.currentPage);
-  console.log(event.target.dataset.id);
   return markupPagination;
 }
