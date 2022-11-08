@@ -612,6 +612,7 @@ body {
 }
 
 .popular-film__card {
+  position: relative;
   width: 280px;
   height: 100%;
   border-radius: 5px;
@@ -666,6 +667,15 @@ body {
   line-height: 1.16;
   background-color: var(--active_color);
   color: var(--main-accent-color);
+}
+
+.btn-youtube {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ff0000;
+  width: 80px;
+  height: 40px;
 }
 
 @media screen and (min-width: 768px) {
