@@ -62,7 +62,7 @@ async function onMovieImageClick(event) {
       .classList.contains('active-header-button')
   ) {
     const watchedDelete = document.querySelector('.watched');
-    watchedDelete.textContent = 'DELETE';
+    watchedDelete.textContent = 'REMOVE';
     watchedDelete.addEventListener('click', () => {
       deleteWatchedFilm(movie);
     });
@@ -70,7 +70,7 @@ async function onMovieImageClick(event) {
     addToQueue.addEventListener('click', onQueuedBtnClick);
   } else {
     const queueDelete = document.querySelector('.queue');
-    queueDelete.textContent = 'DELETE';
+    queueDelete.textContent = 'REMOVE';
     queueDelete.addEventListener('click', () => {
       deleteQueueFilm(movie);
     });
