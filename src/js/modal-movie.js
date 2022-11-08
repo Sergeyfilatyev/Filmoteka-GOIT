@@ -19,8 +19,9 @@ async function onMovieImageClick(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-
-  console.log(event.target.dataset.id);
+  refs.youtubeBtn.dataset.id = event.target.dataset.id;
+  // console.log(event.target.dataset.id);
+  // console.log(refs.youtubeBtn.dataset.id);
 
   const movie = await fetchById(event.target.dataset.id);
   console.log(movie);
