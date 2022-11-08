@@ -509,7 +509,7 @@ body {
   justify-content: space-between;
   gap: 20px;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   min-height: 600px;
 }
 
@@ -580,13 +580,13 @@ body {
     width: 336px;
   }
   .popular-film__cover {
-    height: 455px;
+    height: 478px;
   }
   .info__name {
-    font-size: 16px;
+    font-size: 18px;
   }
   .info__other {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -598,15 +598,13 @@ body {
     height: 100%;
   }
   .popular-film__cover {
-    height: 390px;
+    height: 398px;
   }
   .info__name {
     font-size: 16px;
-    line-height: 1.2;
   }
   .info__other {
     font-size: 12px;
-    line-height: 1.2;
   }
   .info__rating {
     width: 40px;

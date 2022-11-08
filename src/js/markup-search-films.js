@@ -16,6 +16,15 @@ export async function markupSearchFilms(query, page) {
   refs.popularFilms.innerHTML = '';
 
   films.movies.forEach(movie => {
+    let name;
+
+    if (document.documentElement.scrollWidth >= 768) {
+      name =
+        movie.name.length >= 35
+          ? movie.name.substring(0, 35) + '...'
+          : movie.name;
+    } else name = movie.name;
+
     if (movie.genres.length >= 3) {
       refs.popularFilms.insertAdjacentHTML(
         'beforeend',
@@ -27,16 +36,8 @@ export async function markupSearchFilms(query, page) {
             loading="lazy"
           />
           <div class="info">
-            <p class="info__name">${
-              movie.name.length >= 50
-                ? movie.name.substring(0, 50) + '...'
-                : movie.name
-            }</p>
-            <p class="info__other">${movie.genres[0]}, ${
-          movie.genres[1]
-        }, Other | ${movie.year} <span class="info__rating">${
-          movie.rating
-        }</span></p>
+            <p class="info__name">${name}</p>
+            <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year} <span class="info__rating">${movie.rating}</span></p>
           </div>
         </a>`
       );
@@ -52,11 +53,7 @@ export async function markupSearchFilms(query, page) {
         loading="lazy"
       />
       <div class="info">
-        <p class="info__name">${
-          movie.name.length >= 50
-            ? movie.name.substring(0, 50) + '...'
-            : movie.name
-        }</p>
+        <p class="info__name">${name}</p>
         <p class="info__other">${movie.genres.join(', ')} | ${
         movie.year
       }<span class="info__rating">${movie.rating}</span></p>
