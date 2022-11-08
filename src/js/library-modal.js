@@ -31,9 +31,9 @@ async function onMovieImageClick(event) {
     
         <div class="movie-info">
             <h2 class='movie-title'>${movie.name}</h2>
-            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${
-              movie.rating
-            }</span>/ ${movie.votes}</span></p>
+            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${movie.rating.toFixed(
+              2
+            )}</span>/ ${movie.votes}</span></p>
              <p class='text'>Popularity <span class='back-info movie-popular'>${
                movie.popularity
              }</span></p>
