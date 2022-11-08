@@ -89,7 +89,7 @@ export function createPagination(totalPages, page) {
 
   if (page < totalPages) {
     //показать следующую кнопку, если значение страницы меньше, чем totalPage(20)
-    liTag += `<li class="btn next" data-id = "${afterPages}" >Next &#62
+    liTag += `<li class="btn next" data-id = "${page + 1}" >Next &#62
 </li>`;
   }
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
