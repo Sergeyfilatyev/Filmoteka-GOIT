@@ -1,5 +1,5 @@
-// const basicLightbox = require('basiclightbox');
-// import * as basicLightbox from 'basiclightbox';
+const basicLightbox = require('basiclightbox');
+import * as basicLightbox from 'basiclightbox';
 import { fetchTrailer } from './fetch';
 import { refs } from './refs';
 
