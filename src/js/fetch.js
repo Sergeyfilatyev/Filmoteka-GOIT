@@ -155,11 +155,9 @@ export async function fetchTrailer(id) {
       `${BASIC_QUERY_LINK}/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
     );
 
-    const result = response.data.results[0].key;
-
     document.querySelector('.spinner').style.display = 'none';
 
-    return result;
+    return response;
   } catch (error) {
     console.error(error);
   }
