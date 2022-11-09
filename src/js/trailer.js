@@ -7,17 +7,13 @@ refs.popularFilms.addEventListener('click', trailerStart);
 refs.modal.addEventListener('click', trailerStart);
 
 async function trailerStart(event) {
-  if (event.target.closest('.youtube-btn')) {
-    const result = await fetchTrailer(
-      event.target.closest('.youtube-btn').dataset.id
-    );
+  if (!event.target.closest('.youtube-btn')) {
+    return;
   }
 
-  if (event.target.closest('.btn-youtube')) {
-    const result = await fetchTrailer(
-      event.target.closest('.btn-youtube').dataset.id
-    );
-  }
+  const result = await fetchTrailer(
+    event.target.closest('.youtube-btn').dataset.id
+  );
 
   if (result.data.results.length !== 0) {
     const trailerId = result.data.results.find(
