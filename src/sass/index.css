@@ -684,22 +684,6 @@ button {
   color: var(--main-accent-color);
 }
 
-.btn-youtube {
-  position: absolute;
-  width: 50px;
-  height: 30px;
-  top: 10px;
-  left: 10px;
-  border: none;
-  background-color: transparent;
-}
-
-.icon-youtube {
-  width: 50px;
-  height: 30px;
-  fill: #ff0000;
-}
-
 @media screen and (min-width: 768px) {
   .popular-films {
     gap: 32px;
