@@ -1,6 +1,6 @@
 .header__home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../src/images/header/header_img_Mob.jpg');
+    url('../images/header/header_img_Mob.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -8,7 +8,7 @@
 
 .header__library {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../src/images/header-library/header_library_Mob.jpg');
+    url('../images/header-library/header_library_Mob.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -53,7 +53,7 @@
   overflow: hidden;
   width: 20px;
   border: none;
-  background: transparent url(../src/images/header/search.svg) no-repeat right;
+  background: transparent url(../images/header/search.svg) no-repeat right;
   border-bottom: 0.5px solid #ffffff;
   cursor: pointer;
 }
@@ -167,12 +167,12 @@
 @media screen and (min-width: 768px) {
   .header__home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)),
-      url('../src/images/header/header_img_Tabl.jpg');
+      url('../images/header/header_img_Tabl.jpg');
   }
 
   .header__library {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../src/images/header-library/header_library_Tabl.jpg');
+      url('../images/header-library/header_library_Tabl.jpg');
   }
 
   .header__navigation {
@@ -219,12 +219,12 @@
 @media screen and (min-width: 1280px) {
   .header__home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)),
-      url('../src/images/header/header_img_Desc.jpg');
+      url('../images/header/header_img_Desc.jpg');
   }
 
   .header__library {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../src/images/header-library/header_library_Desc.jpg');
+      url('../images/header-library/header_library_Desc.jpg');
   }
 
   .header__input {
@@ -246,4 +246,11 @@
     width: 148px;
     height: 42px;
   }
+}
+.btn-login {
+  border-radius: 5px;
+  background-color: rgb(28, 30, 33);
+  border: none;
+  color: #ffffff;
+  padding: 2px 5px;
 }

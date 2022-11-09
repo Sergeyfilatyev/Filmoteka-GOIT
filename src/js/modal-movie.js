@@ -5,8 +5,13 @@ import {
   getFromStorage,
   removeFromStorage,
 } from './localStorage';
+// import './library-modal';
+
+// import { deleteWatchedFilm, deleteQueueFilm } from './library-modal';
 
 let movieForStorage = {};
+let filmsInWatched = getFromStorage('watched');
+let filmsInQueue = getFromStorage('queue');
 
 refs.popularFilms.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
@@ -14,13 +19,13 @@ refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 async function onMovieImageClick(event) {
   event.preventDefault();
 
-  if (event.target.nodeName !== 'IMG') {
+  if (!event.target.closest('.popular-film__card')) {
     return;
   }
 
-  console.log(event.target.dataset.id);
-
-  const movie = await fetchById(event.target.dataset.id);
+  const movie = await fetchById(
+    event.target.closest('.popular-film__card').dataset.id
+  );
 
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
@@ -32,9 +37,9 @@ async function onMovieImageClick(event) {
     
         <div class="movie-info">
             <h2 class='movie-title'>${movie.name}</h2>
-            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${
-              movie.rating
-            }</span>/ ${movie.votes}</span></p>
+            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${movie.rating.toFixed(
+              2
+            )}</span>/ ${movie.votes}</span></p>
              <p class='text'>Popularity <span class='back-info movie-popular'>${
                movie.popularity
              }</span></p>
@@ -49,39 +54,50 @@ async function onMovieImageClick(event) {
          </div>
          </div>
          <div class='modal-btns-wrapper'>
-         <button type="button" class="modal-btn current-btn watched">ADD TO WATCHED</button>
+         <button type="button" class="modal-btn watched">ADD TO WATCHED</button>
     <button type="button" class="modal-btn queue">ADD TO QUEUE</button>
     </div>`
   );
   openModal();
   movieForStorage = movie;
+  refs.toWatchedBtn = document.querySelector('.watched');
+  refs.toQueueBtn = document.querySelector('.queue');
+  // console.log(movieForStorage);
+  // console.log(refs.toWatchedBtn);
+  // console.log(refs.toQueueBtn);
+  addTextWatched();
+  addTextQueue();
+  if (refs.toWatchedBtn.textContent === 'ADD TO WATCHED') {
+    refs.toWatchedBtn.classList.add('current-btn');
+  }
+  if (refs.toQueueBtn.textContent === 'ADD TO QUEUE') {
+    refs.toQueueBtn.classList.add('current-btn');
+  }
 }
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-  document.addEventListener('keydown', onEscKeyPress);
-}
-
-function closeModal() {
-  refs.backdrop.classList.add('is-hidden');
-  document.removeEventListener('keydown', onEscKeyPress);
-
-}
-function onCloseBtnClick() {
-  closeModal();
-}
-
-//?   то что добавил к Леры файлу moda-movie ========================================================================
-let filmsInWatched = [];
-let filmsInQueue = [];
-
-function openModal() {
-  refs.backdrop.classList.remove('is-hidden');
+  refs.modal.classList.add('active');
   const watchBtn = document.querySelector('.watched');
   watchBtn.addEventListener('click', onWatchedBtnClick);
 
   const queueBtn = document.querySelector('.queue');
   queueBtn.addEventListener('click', onQueuedBtnClick);
+
+  document.addEventListener('keydown', onEscKeyPress);
+  refs.backdrop.addEventListener('click', onBackdropClick);
+  document.body.classList.add('stop-scrolling');
+}
+
+function closeModal() {
+  refs.backdrop.classList.add('is-hidden');
+  document.removeEventListener('keydown', onEscKeyPress);
+  refs.backdrop.removeEventListener('click', onBackdropClick);
+  document.body.classList.remove('stop-scrolling');
+}
+
+function onCloseBtnClick() {
+  closeModal();
 }
 
 function checkLibraryStorage() {
@@ -101,11 +117,15 @@ function onWatchedBtnClick(e) {
   checkLibraryStorage();
 
   if (filmsInWatched.find(film => film.id === movieForStorage.id)) {
-    return;
+    deleteWatchedFilm(movieForStorage);
+    refs.toWatchedBtn.textContent = 'ADD TO WATCHED';
+    refs.toWatchedBtn.classList.add('current-btn');
+  } else {
+    filmsInWatched.push(movieForStorage);
+    addToStorage('watched', filmsInWatched);
+    refs.toWatchedBtn.textContent = 'REMOVE WATCHED';
+    refs.toWatchedBtn.classList.remove('current-btn');
   }
-  filmsInWatched.push(movieForStorage);
-
-  addToStorage('watched', filmsInWatched);
 }
 
 function onQueuedBtnClick(e) {
@@ -113,16 +133,56 @@ function onQueuedBtnClick(e) {
     return alert('Movie not find');
   }
   checkLibraryStorage();
-  if (filmsInQueue.find(film => film.id === movieForStorage.id)) {
-    return;
-  }
-  filmsInQueue.push(movieForStorage);
 
-  addToStorage('queue', filmsInQueue);
+  if (filmsInQueue.find(film => film.id === movieForStorage.id)) {
+    deleteQueueFilm(movieForStorage);
+    refs.toQueueBtn.textContent = 'ADD TO QUEUE';
+    refs.toQueueBtn.classList.add('current-btn');
+  } else {
+    filmsInQueue.push(movieForStorage);
+    addToStorage('queue', filmsInQueue);
+    refs.toQueueBtn.textContent = 'REMOVE QUEUE';
+    refs.toQueueBtn.classList.remove('current-btn');
+  }
 }
 
 function onEscKeyPress(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
+}
+
+function onBackdropClick(event) {
+  const backdrop = event.target.className;
+  if (backdrop === 'backdrop') {
+    closeModal();
+  }
+}
+function addTextWatched() {
+  if (filmsInWatched.find(film => film.id === movieForStorage.id)) {
+    refs.toWatchedBtn.textContent = 'REMOVE WATCHED';
+  } else {
+    refs.toWatchedBtn.textContent = 'ADD TO WATCHED';
+  }
+}
+function addTextQueue() {
+  if (filmsInQueue.find(film => film.id === movieForStorage.id)) {
+    refs.toQueueBtn.textContent = 'REMOVE QUEUE';
+  } else {
+    refs.toQueueBtn.textContent = 'ADD TO QUEUE';
+  }
+}
+function deleteWatchedFilm(data) {
+  const films = JSON.parse(localStorage.getItem('watched'));
+  const filmToDelete = films.find(film => film.id === data.id);
+  films.splice(films.indexOf(filmToDelete), 1);
+  localStorage.removeItem('watched');
+  localStorage.setItem('watched', JSON.stringify(films));
+}
+function deleteQueueFilm(data) {
+  const films = JSON.parse(localStorage.getItem('queue'));
+  const filmToDelete = films.find(film => film.id === data.id);
+  films.splice(films.indexOf(filmToDelete), 1);
+  localStorage.removeItem('queue');
+  localStorage.setItem('queue', JSON.stringify(films));
 }

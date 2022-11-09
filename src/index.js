@@ -14,3 +14,6 @@ import './js/modal-movie';
 import './js/pagination';
 
 import './js/theme-darck-light';
+import './js/firebase';
+import './js/modalAuthor';
+import './js/trailer';

@@ -31,9 +31,9 @@ async function onMovieImageClick(event) {
     
         <div class="movie-info">
             <h2 class='movie-title'>${movie.name}</h2>
-            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${
-              movie.rating
-            }</span>/ ${movie.votes}</span></p>
+            <p class='text'>Vote/Votes <span class='back-info movie-votes'><span class='movie-rating'>${movie.rating.toFixed(
+              2
+            )}</span>/ ${movie.votes}</span></p>
              <p class='text'>Popularity <span class='back-info movie-popular'>${
                movie.popularity
              }</span></p>
@@ -62,7 +62,7 @@ async function onMovieImageClick(event) {
       .classList.contains('active-header-button')
   ) {
     const watchedDelete = document.querySelector('.watched');
-    watchedDelete.textContent = 'DELETE';
+    watchedDelete.textContent = 'REMOVE WATCHED';
     watchedDelete.addEventListener('click', () => {
       deleteWatchedFilm(movie);
     });
@@ -70,7 +70,7 @@ async function onMovieImageClick(event) {
     addToQueue.addEventListener('click', onQueuedBtnClick);
   } else {
     const queueDelete = document.querySelector('.queue');
-    queueDelete.textContent = 'DELETE';
+    queueDelete.textContent = 'REMOVE QUEUE';
     queueDelete.addEventListener('click', () => {
       deleteQueueFilm(movie);
     });
