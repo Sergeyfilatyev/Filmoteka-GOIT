@@ -20,8 +20,8 @@ export async function markupSearchFilms(query, page) {
 
     if (document.documentElement.scrollWidth >= 768) {
       name =
-        movie.name.length >= 35
-          ? movie.name.substring(0, 35) + '...'
+        movie.name.length >= 30
+          ? movie.name.substring(0, 30) + '...'
           : movie.name;
     } else name = movie.name;
 

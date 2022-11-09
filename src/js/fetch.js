@@ -16,7 +16,14 @@ export async function fetchPopular(page) {
     const genderId = await fetchGenresId();
 
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = './images/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
@@ -65,7 +72,14 @@ export async function fetchByName(query, page) {
     const genderId = await fetchGenresId();
     console.log(response);
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = './images/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
