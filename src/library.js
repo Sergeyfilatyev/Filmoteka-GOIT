@@ -5,3 +5,4 @@ import './js/watchedRender';
 import './js/library-modal';
 import './js/modal-footer';
 import './js/theme-darck-light';
+import './js/trailer';

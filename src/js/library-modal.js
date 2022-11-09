@@ -15,11 +15,14 @@ refs.watchedFilmsList.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
 async function onMovieImageClick(event) {
-  if (event.target.nodeName !== 'IMG') {
+  event.preventDefault();
+  if (!event.target.closest('.watched-film__card')) {
     return;
   }
 
-  const movie = await fetchById(event.target.dataset.id);
+  const movie = await fetchById(
+    event.target.closest('.watched-film__card').dataset.id
+  );
 
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
@@ -55,6 +58,7 @@ async function onMovieImageClick(event) {
 
   openModal();
   movieForStorage = movie;
+  refs.youtubeBtn.dataset.id = movieForStorage.id;
 
   if (
     document
@@ -81,13 +85,15 @@ async function onMovieImageClick(event) {
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-
+  refs.modal.classList.add('active');
   window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('stop-scrolling');
 }
 
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('stop-scrolling');
 }
 function onCloseBtnClick() {
   closeModal();
@@ -150,8 +156,6 @@ function deleteQueueFilm(data) {
     }
   });
 }
-
-//?   то что добавил к Леры файлу moda-movie ========================================================================
 
 function checkLibraryStorage() {
   if (getFromStorage('watched')) {
