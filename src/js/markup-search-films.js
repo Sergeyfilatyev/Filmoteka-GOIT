@@ -35,8 +35,6 @@ export async function markupSearchFilms(query, page) {
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}">YouTube
-      </button>
           <div class="info">
             <p class="info__name">${name}</p>
             <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year} <span class="info__rating">${movie.rating}</span></p>
@@ -54,8 +52,6 @@ export async function markupSearchFilms(query, page) {
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}" >YouTube
-      </button>
       <div class="info">
         <p class="info__name">${name}</p>
         <p class="info__other">${movie.genres.join(', ')} | ${
