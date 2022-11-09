@@ -28,8 +28,6 @@ export async function markupPopularFilms(page) {
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}" >YouTube
-          </button>
           <div class="info">
             <p class="info__name">${name}</p>
             <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year}</p>
@@ -47,8 +45,6 @@ export async function markupPopularFilms(page) {
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}" >YouTube
-      </button>
       <div class="info">
         <p class="info__name">${name}</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
