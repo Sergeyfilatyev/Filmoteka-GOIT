@@ -22,7 +22,7 @@ export async function fetchPopular(page) {
       if (object.poster_path) {
         cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       } else {
-        cover = './images/no-image.jpg';
+        cover = '../images/no-image.jpg';
       }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
@@ -78,7 +78,7 @@ export async function fetchByName(query, page) {
       if (object.poster_path) {
         cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       } else {
-        cover = './images/no-image.jpg';
+        cover = '../images/no-image.jpg';
       }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
@@ -135,7 +135,7 @@ export async function fetchById(id) {
     if (object.poster_path) {
       cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
     } else {
-      cover = './images/no-image.jpg';
+      cover = '../images/no-image.jpg';
     }
     let year = response.data.release_date.substring(0, 4);
     let name = response.data.title;
