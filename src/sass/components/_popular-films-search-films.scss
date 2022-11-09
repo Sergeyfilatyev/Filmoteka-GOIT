@@ -14,15 +14,16 @@
   height: 100%;
   border-radius: 5px;
   transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .popular-film__card:hover,
 .popular-film__card:focus {
-  box-shadow: 8px 12px 14px 2px rgba(71, 71, 71, 0.60);
+  box-shadow: 8px 12px 14px 2px rgba(71, 71, 71, 0.6);
 }
 
 .popular-film__cover {
-
+  position: relative;
   width: 100%;
   height: 398px;
   border-radius: 5px;
@@ -67,6 +68,22 @@
   color: var(--main-accent-color);
 }
 
+.btn-youtube {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-youtube {
+  width: 50px;
+  height: 30px;
+  fill: #ff0000;
+}
+
 @media screen and (min-width: 768px) {
   .popular-films {
     gap: 32px;
@@ -88,6 +105,15 @@
 
   .info__other {
     font-size: 14px;
+  }
+  .btn-youtube {
+    width: 70px;
+    height: 50px;
+  }
+
+  .icon-youtube {
+    width: 70px;
+    height: 50px;
   }
 }
 
@@ -116,5 +142,15 @@
   .info__rating {
     width: 40px;
     height: 20px;
+  }
+
+  .btn-youtube {
+    width: 50px;
+    height: 30px;
+  }
+
+  .icon-youtube {
+    width: 50px;
+    height: 30px;
   }
 }

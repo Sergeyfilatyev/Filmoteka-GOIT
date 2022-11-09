@@ -8,8 +8,8 @@ import { markupSearchFilms } from './markup-search-films';
 //   const getData = await markupPopularFilms(page);
 // }
 
-const ulTag = document.querySelector('ul');
-let totalPages = 20;
+const ulTag = document.querySelector('.pagination__list');
+// let totalPages = 20;
 
 //вызов функции с передачей параметров и добавлением внутреннего элемента, который является тегом ul
 export function createPagination(totalPages, page) {
@@ -91,6 +91,9 @@ export function createPagination(totalPages, page) {
     //показать следующую кнопку, если значение страницы меньше, чем totalPage(20)
     liTag += `<li class="btn next" data-id = "${page + 1}" >Next &#62
 </li>`;
+  }
+  if (totalPages === 1) {
+    refs.pagination.innerHTML = '';
   }
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
   window.scrollTo({ top: 0, behavior: 'smooth' });

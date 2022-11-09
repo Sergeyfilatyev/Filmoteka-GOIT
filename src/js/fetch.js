@@ -16,7 +16,14 @@ export async function fetchPopular(page) {
     const genderId = await fetchGenresId();
 
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
@@ -65,7 +72,14 @@ export async function fetchByName(query, page) {
     const genderId = await fetchGenresId();
     console.log(response);
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
@@ -114,8 +128,16 @@ export async function fetchById(id) {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
-    let cover =
-      'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    // let cover =
+    //   'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    let cover;
+
+    if (response.data.poster_path) {
+      cover =
+        'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    } else {
+      cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+    }
     let year = response.data.release_date.substring(0, 4);
     let name = response.data.title;
     let rating = response.data.vote_average;
