@@ -155,14 +155,20 @@
   overflow: hidden;
 }
 .youtube-btn {
+  width: 240px;
+  height: 360px;
   position: absolute;
-  top: 60px;
-
-  border-radius: 10px;
+  top: 50px;
+  left: 20px;
+  border: none;
   background-color: transparent;
 }
-.youtube-icon {
+.youtube-btn:focus .youtube-icon,
+.youtube-btn:hover .youtube-icon {
   fill: #ff0000;
+}
+.youtube-icon {
+  fill: transparent;
 }
 
 @media screen and (max-width: 767px) {
@@ -211,6 +217,12 @@
   .movie-title {
     padding-top: 0;
   }
+  .youtube-btn {
+    width: 264px;
+    height: 370px;
+
+    left: 30px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .modal {
@@ -234,5 +246,9 @@
 
   .modal-btn {
     width: 136px;
+  }
+  .youtube-btn {
+    width: 280px;
+    height: 398px;
   }
 } ;
