@@ -60,11 +60,10 @@ async function onMovieImageClick(event) {
   );
   openModal();
   movieForStorage = movie;
+  refs.youtubeBtn.dataset.id = movieForStorage.id;
   refs.toWatchedBtn = document.querySelector('.watched');
   refs.toQueueBtn = document.querySelector('.queue');
-  // console.log(movieForStorage);
-  // console.log(refs.toWatchedBtn);
-  // console.log(refs.toQueueBtn);
+
   addTextWatched();
   addTextQueue();
   if (refs.toWatchedBtn.textContent === 'ADD TO WATCHED') {
