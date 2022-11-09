@@ -29,12 +29,23 @@
         />
         <button type="submit" class="header__search">Search</button>
       </form>
-
       <!-- Сюда на ошибку можно добавлять и убирать класс is-hidden  -->
       <span class="header__error"
         >Search result not successful. Enter the correct movie name and try
         again</span
       >
+    </div>
+    <div class="theme">
+      <button type="button" class="theme__dark" data-theme-dark>
+        <svg class="theme__dark_icon" width="30" height="30">
+          <use href="./images/svg/sprite.svg#icon-dark"></use>
+        </svg>
+      </button>
+      <button type="button" class="theme__ligth" data-theme-light>
+        <svg class="theme__ligth_icon" width="30" height="30">
+          <use href="./images/svg/sprite.svg#icon-light"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
