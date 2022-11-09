@@ -21,45 +21,37 @@ export async function markupPopularFilms(page) {
     if (movie.genres.length >= 3) {
       refs.popularFilms.insertAdjacentHTML(
         'beforeend',
-        `<a class="popular-film__card" href="" data-id="${movie.id}" >
+        `<li class="popular-film__card"  data-id="${movie.id}" >
           <img 
             class="popular-film__cover"
             src="${movie.cover}"
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}">
-          <svg class="icon-youtube">
-            <use href="./images/svg/sprite.svg#icon-youtube"></use>
-          </svg>
-        </button>
+          
           <div class="info">
             <p class="info__name">${name}</p>
             <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year}</p>
           </div>
-        </a>`
+        </li>`
       );
       return;
     }
     refs.popularFilms.insertAdjacentHTML(
       'beforeend',
-      `<a class="popular-film__card" href="" data-id="${movie.id}">
+      `<li class="popular-film__card"  data-id="${movie.id}">
       <img 
         class="popular-film__cover"
         src="${movie.cover}"
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}">
-      <svg class="icon-youtube">
-        <use href="./images/svg/sprite.svg#icon-youtube"></use>
-      </svg>
-    </button>
+      
       <div class="info">
         <p class="info__name">${name}</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
       </div
-    </a>`
+    </li>`
     );
   });
 }
