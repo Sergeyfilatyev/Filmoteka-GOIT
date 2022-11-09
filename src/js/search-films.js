@@ -11,12 +11,12 @@ textError.textContent = '';
 refs.searchForm.addEventListener('submit', () => {
   event.preventDefault();
   createPagination(refs.totalPages, 1);
-  console.log(refs.currentPage);
+  // console.log(refs.currentPage);
   submitForm();
 });
 
 async function submitForm(event) {
-  // refs.currentPage = 1;
+  refs.currentPage = 1;
 
   if (refs.searchInput.value.trim() === '') {
     textError.textContent = 'Please, enter the name of the movie';
@@ -25,4 +25,19 @@ async function submitForm(event) {
   }
 
   markupSearchFilms(refs.searchInput.value.trim(), 1);
+}
+
+refs.searchForm.addEventListener('submit', submit);
+
+async function submit(event) {
+  if (refs.searchInput.value) {
+    markupPagination = await markupSearchFilms(
+      refs.searchInput.value,
+      event.target.dataset.id
+    );
+  } else {
+    console.log(submit);
+  }
+  createPagination(refs.totalPages, refs.currentPage);
+  return markupPagination;
 }

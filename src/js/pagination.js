@@ -92,6 +92,9 @@ export function createPagination(totalPages, page) {
     liTag += `<li class="btn next" data-id = "${page + 1}" >Next &#62
 </li>`;
   }
+  if (totalPages === 1) {
+    refs.pagination.innerHTML = '';
+  }
   ulTag.innerHTML = liTag; // добавляет тег li внутрь тега ul
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
