@@ -9,7 +9,7 @@ import { markupSearchFilms } from './markup-search-films';
 // }
 
 const ulTag = document.querySelector('.pagination__list');
-let totalPages = 20;
+// let totalPages = 20;
 
 //вызов функции с передачей параметров и добавлением внутреннего элемента, который является тегом ul
 export function createPagination(totalPages, page) {
