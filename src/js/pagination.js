@@ -8,7 +8,7 @@ import { markupSearchFilms } from './markup-search-films';
 //   const getData = await markupPopularFilms(page);
 // }
 
-const ulTag = document.querySelector('ul');
+const ulTag = document.querySelector('.pagination__list');
 let totalPages = 20;
 
 //вызов функции с передачей параметров и добавлением внутреннего элемента, который является тегом ul
