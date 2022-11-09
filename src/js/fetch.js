@@ -132,8 +132,9 @@ export async function fetchById(id) {
     //   'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
     let cover;
 
-    if (object.poster_path) {
-      cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+    if (response.data.poster_path) {
+      cover =
+        'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
     } else {
       cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
     }
