@@ -357,8 +357,11 @@ button {
 
 .modal-link {
   text-decoration: underline;
+
+
   cursor: pointer;
-}
+
+
 
 @media screen and (min-width: 768px) {
   .footer__container {
@@ -596,6 +599,8 @@ button {
   color: var(--main-accent-color);
 }
 
+
+
 .btn-youtube {
   position: absolute;
   width: 50px;
@@ -611,6 +616,7 @@ button {
   height: 30px;
   fill: #ff0000;
 }
+
 
 @media screen and (min-width: 768px) {
   .popular-films {
@@ -670,6 +676,7 @@ button {
   }
 }
 .watched-film__card {
+  position: relative;
   display: block;
   cursor: pointer;
   width: 280px;
@@ -690,8 +697,26 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  min-height: 600px;
 }
 
+@media screen and (min-width: 768px) {
+  .watchedFilms {
+    gap: 32px;
+  }
+  .watched-film__card {
+    width: 336px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .watchedFilms {
+    gap: 18px;
+  }
+  .watched-film__card {
+    width: 280px;
+    height: 100%;
+  }
+}
 .up-btn-wrapper {
   position: fixed;
   bottom: 39px;
@@ -1304,4 +1329,8 @@ body.theme-light .theme__dark {
 }
 .theme__dark:hover .theme__dark_icon, .theme__dark:focus .theme__dark_icon {
   fill: var(--active_color);
+
+}/*# sourceMappingURL=index.css.map */
+=======
 }
+
