@@ -1,16 +1,7 @@
-const body = document.querySelector('body');
-const darkThemeBtn = document.querySelector('[data-theme-dark]');
-const lightThemeBtn = document.querySelector('[data-theme-light]');
+import { refs } from './refs';
+import { addToStorage, getFromStorage } from './localStorage';
 
-function setToLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-function getFromLocalStorage(key) {
-  const savedData = localStorage.getItem(key);
-  const parsedData = JSON.parse(savedData);
-  return parsedData;
-}
+const { body, darkThemeBtn, lightThemeBtn } = refs;
 
 const theme = {
   LIGHT: 'theme-light',
@@ -19,11 +10,11 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-let newTheme = getFromLocalStorage('n-theme');
+let newTheme = getFromStorage('n-theme');
 
 if (!newTheme) {
   newTheme = LIGHT;
-  setToLocalStorage('n-theme', LIGHT);
+  addToStorage('n-theme', LIGHT);
 } else {
   body.classList.add(newTheme);
 }
@@ -35,5 +26,5 @@ function changeTheme() {
   body.classList.toggle(DARK);
   body.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', body.classList.contains(DARK) ? DARK : LIGHT);
+  addToStorage('n-theme', body.classList.contains(DARK) ? DARK : LIGHT);
 }

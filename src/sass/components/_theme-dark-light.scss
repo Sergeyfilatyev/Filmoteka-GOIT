@@ -1,47 +1,150 @@
 body.theme-dark {
+  background-color: #543d31;
+
+  .footer {
+    background-color: #301d12;
+  }
+
+  .modal {
     background-color: #543d31;
+  }
 
-    .footer {
-            background-color: #301d12;
-        }
+  .modal_footer {
+    background-color: #543d31;
+  }
 
-    .modal {
-        background-color: #543d31;
-    }
+  .team_item{
+    background-color: #301d12;
+    color: var(--main-accent-color);
+  }
 
-    .modal_footer {
-        background-color: #543d31;
+  .social_icon{
+    fill: var(--main-accent-color);
+  }
+
+  .footer__container {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--main-accent-color);
+  }
+
+  .theme__dark {
+    display: none;
+  }
+
+  .theme__ligth {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .theme__dark_icon {
+    fill: var(--main-accent-color);
+
+    .theme__dark:hover &,
+    .theme__dark:focus & {
+      fill: var(--active_color);
     }
-    .theme__dark{
-        display: none;
-    }
-    .theme__ligth{
-        display: block;
-    }
+  }
+
+  .popular-film__card {
+    background-color: #301d12;
+  }
+
+  .watched-film__card{
+    background-color: #301d12;
+  }
+
+  .info__name {
+    color: var(--main-accent-color);
+  }
+
+  .movie-info {
+    color: var(--main-accent-color);
+  }
+
+  .back-info {
+    color: var(--main-accent-color);
+  }
+
+  .modal-btn {
+    color: var(--main-accent-color);
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+
+  .current-btn {
+    border-color: transparent;
+  }
+
+  .pagination ul li.next {
+    background-color: #543d31;
+  }
+
+  .pagination ul li.prev {
+    background-color: #543d31;
+  }
+
+  .up-btn-wrapper {
+      color: var(--active_color);
+  }
 }
 
 body.theme-light {
+  background-color: var(--main-accent-color);
+
+  .footer {
+    background-color: var(--footer-bg-color);
+  }
+
+  .modal {
     background-color: var(--main-accent-color);
+  }
 
-    .footer {
-        background-color: var(--footer-bg-color);
-    }
+  .modal_footer {
+    background-color: var(--footer-bg-color);
+  }
 
-    .modal {
-        background-color: var(--main-accent-color);
-    }
-
-    .modal_footer {
-        background-color: var(--footer-bg-color);
-    }
-
+  .theme__dark {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
 
-.theme__ligth{
-    display: none; 
+.theme {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
 }
 
+.theme__ligth {
+  display: none;
+}
 
+.theme__ligth_icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--main-accent-color);
 
+  .theme__ligth:hover &,
+  .theme__ligth:focus & {
+    fill: var(--active_color);
+  }
+}
 
+.theme__dark_icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--main-accent-color);
 
+  .theme__dark:hover &,
+  .theme__dark:focus & {
+    fill: var(--active_color);
+  }
+}

@@ -164,29 +164,6 @@
   border: none;
 }
 
-.theme{
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  
-}
-
-.theme-btn-light{
-  // position: absolute;
-  // bottom: 8px;
-  // right: 8px;
-  width: 60px;
-  height: 40px;
-}
-
-.theme-btn-dark {
-  // position: absolute;
-  // bottom: 8px;
-  // right: 8px;
-  width: 60px;
-  height: 40px;
-}
-
 @media screen and (min-width: 768px) {
   .header__home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)),

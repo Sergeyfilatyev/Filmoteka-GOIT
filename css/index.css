@@ -248,22 +248,6 @@ body {
   border: none;
 }
 
-.theme {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-}
-
-.theme-btn-light {
-  width: 60px;
-  height: 40px;
-}
-
-.theme-btn-dark {
-  width: 60px;
-  height: 40px;
-}
-
 @media screen and (min-width: 768px) {
   .header__home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.26)), url("../src/images/header/header_img_Tabl.jpg");
@@ -337,6 +321,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+  color: var(--footer-text-color);
 }
 
 .first-line {
@@ -1065,11 +1050,67 @@ body.theme-dark .modal {
 body.theme-dark .modal_footer {
   background-color: #543d31;
 }
+body.theme-dark .team_item {
+  background-color: #301d12;
+  color: var(--main-accent-color);
+}
+body.theme-dark .social_icon {
+  fill: var(--main-accent-color);
+}
+body.theme-dark .footer__container {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--main-accent-color);
+}
 body.theme-dark .theme__dark {
   display: none;
 }
 body.theme-dark .theme__ligth {
   display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+body.theme-dark .theme__dark_icon {
+  fill: var(--main-accent-color);
+}
+.theme__dark:hover body.theme-dark .theme__dark_icon, .theme__dark:focus body.theme-dark .theme__dark_icon {
+  fill: var(--active_color);
+}
+body.theme-dark .popular-film__card {
+  background-color: #301d12;
+}
+body.theme-dark .watched-film__card {
+  background-color: #301d12;
+}
+body.theme-dark .info__name {
+  color: var(--main-accent-color);
+}
+body.theme-dark .movie-info {
+  color: var(--main-accent-color);
+}
+body.theme-dark .back-info {
+  color: var(--main-accent-color);
+}
+body.theme-dark .modal-btn {
+  color: var(--main-accent-color);
+  border: 1px solid rgb(255, 255, 255);
+}
+body.theme-dark .current-btn {
+  border-color: transparent;
+}
+body.theme-dark .pagination ul li.next {
+  background-color: #543d31;
+}
+body.theme-dark .pagination ul li.prev {
+  background-color: #543d31;
+}
+body.theme-dark .up-btn-wrapper {
+  color: var(--active_color);
 }
 
 body.theme-light {
@@ -1084,7 +1125,37 @@ body.theme-light .modal {
 body.theme-light .modal_footer {
   background-color: var(--footer-bg-color);
 }
+body.theme-light .theme__dark {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.theme {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+}
 
 .theme__ligth {
   display: none;
+}
+
+.theme__ligth_icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--main-accent-color);
+}
+.theme__ligth:hover .theme__ligth_icon, .theme__ligth:focus .theme__ligth_icon {
+  fill: var(--active_color);
+}
+
+.theme__dark_icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--main-accent-color);
+}
+.theme__dark:hover .theme__dark_icon, .theme__dark:focus .theme__dark_icon {
+  fill: var(--active_color);
 }/*# sourceMappingURL=index.css.map */

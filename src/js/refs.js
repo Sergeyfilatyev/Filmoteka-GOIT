@@ -22,4 +22,8 @@ export const refs = {
   currentPage: 1,
 
   watchedFilmsList: document.querySelector('.watchedFilms'),
+
+  body: document.querySelector('body'),
+  darkThemeBtn: document.querySelector('[data-theme-dark]'),
+  lightThemeBtn: document.querySelector('[data-theme-light]'),
 };
