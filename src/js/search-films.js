@@ -28,7 +28,7 @@ async function submitForm(event) {
 }
 
 refs.searchForm.addEventListener('submit', submit);
-
+let markupPagination;
 async function submit(event) {
   if (refs.searchInput.value) {
     markupPagination = await markupSearchFilms(
