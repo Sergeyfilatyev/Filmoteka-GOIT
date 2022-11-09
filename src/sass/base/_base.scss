@@ -1,37 +1,40 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
- h1,
- h2,
- h3,
- p {
-     margin-top: 0;
-     margin-bottom: 0;
- }
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
- ul,
- ol {
-     margin-top: 0;
-     margin-bottom: 0;
-     margin-left: 0;
-     padding: unset;
-     list-style: none;
- }
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: unset;
+  list-style: none;
+}
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ::after,
 ::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+  cursor: pointer;
 }

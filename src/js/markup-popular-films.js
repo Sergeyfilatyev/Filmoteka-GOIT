@@ -21,8 +21,8 @@ export async function markupPopularFilms(page) {
     if (movie.genres.length >= 3) {
       refs.popularFilms.insertAdjacentHTML(
         'beforeend',
-        `<a class="popular-film__card" href="" >
-          <img data-id="${movie.id}"
+        `<a class="popular-film__card" href="" data-id="${movie.id}" >
+          <img 
             class="popular-film__cover"
             src="${movie.cover}"
             alt="${movie.name}"
@@ -40,8 +40,8 @@ export async function markupPopularFilms(page) {
     }
     refs.popularFilms.insertAdjacentHTML(
       'beforeend',
-      `<a class="popular-film__card" href="">
-      <img data-id="${movie.id}"
+      `<a class="popular-film__card" href="" data-id="${movie.id}">
+      <img 
         class="popular-film__cover"
         src="${movie.cover}"
         alt="${movie.name}"
