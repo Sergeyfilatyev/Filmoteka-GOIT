@@ -5,25 +5,29 @@ import {
   getFromStorage,
   removeFromStorage,
 } from './localStorage';
-// import './library-modal';
 
-// import { deleteWatchedFilm, deleteQueueFilm } from './library-modal';
+import { renderWatchedFilms, renderQueueFilms } from './watchedRender';
 
 let movieForStorage = {};
 let filmsInWatched = getFromStorage('watched');
 let filmsInQueue = getFromStorage('queue');
 
-refs.popularFilms.addEventListener('click', onMovieImageClick);
-refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
+if (refs.header.classList.contains('header__library')) {
+  refs.watchedFilmsList.addEventListener('click', onMovieImageClick);
+  refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
+} else {
+  refs.popularFilms.addEventListener('click', onMovieImageClick);
+  refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
+}
 
 async function onMovieImageClick(event) {
   event.preventDefault();
 
-  if (!event.target.closest('.popular-film__card')) {
+  if (event.target.closest('.btn-youtube')) {
     return;
   }
 
-  if (event.target.closest('.btn-youtube')) {
+  if (!event.target.closest('.popular-film__card')) {
     return;
   }
 
@@ -129,6 +133,13 @@ function onWatchedBtnClick(e) {
     refs.toWatchedBtn.textContent = 'REMOVE WATCHED';
     refs.toWatchedBtn.classList.remove('current-btn');
   }
+
+  if (
+    refs.header.classList.contains('header__library') &&
+    refs.headerWatchedButton.classList.contains('active-header-button')
+  ) {
+    renderWatchedFilms();
+  }
 }
 
 function onQueuedBtnClick(e) {
@@ -146,6 +157,13 @@ function onQueuedBtnClick(e) {
     addToStorage('queue', filmsInQueue);
     refs.toQueueBtn.textContent = 'REMOVE QUEUE';
     refs.toQueueBtn.classList.remove('current-btn');
+  }
+
+  if (
+    refs.header.classList.contains('header__library') &&
+    refs.headerQueueButton.classList.contains('active-header-button')
+  ) {
+    renderQueueFilms();
   }
 }
 
