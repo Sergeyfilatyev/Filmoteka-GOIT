@@ -13,10 +13,14 @@ body.theme-dark {
     background-color: #543d31;
   }
 
-  .team_item {
-    background-color: #301d12;
-    color: var(--main-accent-color);
-  }
+    .card-item {
+      background-color: #301d12;
+      color: var(--main-accent-color);
+    }
+  // .team_item {
+  //   background-color: #301d12;
+  //   color: var(--main-accent-color);
+  // }
 
   .social_icon {
     fill: var(--main-accent-color);
@@ -86,18 +90,17 @@ body.theme-dark {
     border-color: transparent;
   }
 
-  .pagination ul li.active,
-  .pagination ul li.numb:hover,
-  .pagination ul li.btn:hover {
-    background: #ff6b08;
-  }
-
   .pagination ul li.numb,
   .pagination ul li.btn,
   .pagination ul li.next,
   .pagination ul li.prev,
   .dots {
     color: #fff;
+    
+  }
+
+  .pagination ul li.next,
+  .pagination ul li.prev{
     background-color: #543d31;
   }
 

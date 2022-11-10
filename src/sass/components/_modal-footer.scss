@@ -79,9 +79,23 @@
     justify-content: space-around;
 }
 
-.team_item{
+.team_item {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    // margin-bottom: 20px;
+    // background-color: var(--footer-bg-color);
+    // padding: 5px;
+    // // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    // border-radius: 5px;
+}
+
+.card-item {
+    width: 200px;
+    height: 320px;
+    transition: transform 250ms cubic-bezier(.56, .57, .76, .76);
+
     margin-bottom: 20px;
-    background-color: var(--footer-bg-color);
+    background-color: #f0e7e7;
     padding: 5px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
