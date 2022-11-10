@@ -746,6 +746,7 @@ button {
   }
 }
 .watched-film__card {
+  position: relative;
   display: block;
   cursor: pointer;
   width: 280px;
@@ -766,8 +767,26 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  min-height: 600px;
 }
 
+@media screen and (min-width: 768px) {
+  .watchedFilms {
+    gap: 32px;
+  }
+  .watched-film__card {
+    width: 336px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .watchedFilms {
+    gap: 18px;
+  }
+  .watched-film__card {
+    width: 280px;
+    height: 100%;
+  }
+}
 .up-btn-wrapper {
   position: fixed;
   bottom: 39px;
