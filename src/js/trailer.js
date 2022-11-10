@@ -7,11 +7,9 @@ if (refs.header.classList.contains('header__library')) {
   refs.watchedFilmsList.addEventListener('click', modalTrailerStart);
 } else {
   refs.popularFilms.addEventListener('click', modalTrailerStart);
+  refs.popularFilms.addEventListener('click', mainTrailerStart);
 }
-
 refs.modal.addEventListener('click', modalTrailerStart);
-refs.popularFilms.addEventListener('click', mainTrailerStart);
-
 async function mainTrailerStart(event) {
   if (!event.target.closest('.btn-youtube')) {
     return;
@@ -51,7 +49,6 @@ async function modalTrailerStart(event) {
     const trailerId = result.data.results.find(
       result => result.type === 'Trailer'
     ).key;
-    console.log(trailerId);
 
     const instance = basicLightbox.create(`
       <iframe src="https://www.youtube.com/embed/${trailerId}" width="850" height="515" frameborder="0"></iframe>
