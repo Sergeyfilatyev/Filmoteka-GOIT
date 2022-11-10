@@ -170,20 +170,6 @@ button {
   outline: none;
 }
 
-.header__input::-moz-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: #ffffff;
-}
-
-.header__input:-ms-input-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: #ffffff;
-}
-
 .header__input::placeholder {
   font-weight: 400;
   font-size: 14px;
@@ -195,7 +181,6 @@ button {
 .header__input:-webkit-autofill:hover,
 .header__input:-webkit-autofill:focus {
   -webkit-text-fill-color: #ffffff;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -434,12 +419,10 @@ button {
   stroke-dasharray: 62.75 188.25;
 }
 #wifi-loader svg.circle-outer circle.back {
-  -webkit-animation: circle-outer 1.8s ease infinite 0.3s;
-          animation: circle-outer 1.8s ease infinite 0.3s;
+  animation: circle-outer 1.8s ease infinite 0.3s;
 }
 #wifi-loader svg.circle-outer circle.front {
-  -webkit-animation: circle-outer 1.8s ease infinite 0.15s;
-          animation: circle-outer 1.8s ease infinite 0.15s;
+  animation: circle-outer 1.8s ease infinite 0.15s;
 }
 #wifi-loader svg.circle-middle {
   height: 60px;
@@ -449,12 +432,10 @@ button {
   stroke-dasharray: 42.5 127.5;
 }
 #wifi-loader svg.circle-middle circle.back {
-  -webkit-animation: circle-middle 1.8s ease infinite 0.25s;
-          animation: circle-middle 1.8s ease infinite 0.25s;
+  animation: circle-middle 1.8s ease infinite 0.25s;
 }
 #wifi-loader svg.circle-middle circle.front {
-  -webkit-animation: circle-middle 1.8s ease infinite 0.1s;
-          animation: circle-middle 1.8s ease infinite 0.1s;
+  animation: circle-middle 1.8s ease infinite 0.1s;
 }
 #wifi-loader svg.circle-inner {
   height: 34px;
@@ -464,30 +445,10 @@ button {
   stroke-dasharray: 22 66;
 }
 #wifi-loader svg.circle-inner circle.back {
-  -webkit-animation: circle-inner 1.8s ease infinite 0.2s;
-          animation: circle-inner 1.8s ease infinite 0.2s;
+  animation: circle-inner 1.8s ease infinite 0.2s;
 }
 #wifi-loader svg.circle-inner circle.front {
-  -webkit-animation: circle-inner 1.8s ease infinite 0.05s;
-          animation: circle-inner 1.8s ease infinite 0.05s;
-}
-
-@-webkit-keyframes circle-outer {
-  0% {
-    stroke-dashoffset: 25;
-  }
-  25% {
-    stroke-dashoffset: 0;
-  }
-  65% {
-    stroke-dashoffset: 301;
-  }
-  80% {
-    stroke-dashoffset: 276;
-  }
-  100% {
-    stroke-dashoffset: 276;
-  }
+  animation: circle-inner 1.8s ease infinite 0.05s;
 }
 
 @keyframes circle-outer {
@@ -507,23 +468,6 @@ button {
     stroke-dashoffset: 276;
   }
 }
-@-webkit-keyframes circle-middle {
-  0% {
-    stroke-dashoffset: 17;
-  }
-  25% {
-    stroke-dashoffset: 0;
-  }
-  65% {
-    stroke-dashoffset: 204;
-  }
-  80% {
-    stroke-dashoffset: 187;
-  }
-  100% {
-    stroke-dashoffset: 187;
-  }
-}
 @keyframes circle-middle {
   0% {
     stroke-dashoffset: 17;
@@ -539,23 +483,6 @@ button {
   }
   100% {
     stroke-dashoffset: 187;
-  }
-}
-@-webkit-keyframes circle-inner {
-  0% {
-    stroke-dashoffset: 9;
-  }
-  25% {
-    stroke-dashoffset: 0;
-  }
-  65% {
-    stroke-dashoffset: 106;
-  }
-  80% {
-    stroke-dashoffset: 97;
-  }
-  100% {
-    stroke-dashoffset: 97;
   }
 }
 @keyframes circle-inner {
@@ -575,32 +502,15 @@ button {
     stroke-dashoffset: 97;
   }
 }
-@-webkit-keyframes text-animation {
-  0% {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
-  }
-  50% {
-    -webkit-clip-path: inset(0);
-            clip-path: inset(0);
-  }
-  100% {
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
-  }
-}
 @keyframes text-animation {
   0% {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
   }
   50% {
-    -webkit-clip-path: inset(0);
-            clip-path: inset(0);
+    clip-path: inset(0);
   }
   100% {
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
   }
 }
 .empty-page {
@@ -856,14 +766,12 @@ button {
   padding: 50px 20px 40px 20px;
   border-radius: 5px;
   overflow: auto;
-  transform: translate(-50%, -50%);
   z-index: 101;
   overflow-y: auto;
   transform: translate(-50%, -50%) scale(0);
   background-color: var(--main-accent-color);
   z-index: 100;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal.active {
@@ -1501,4 +1409,4 @@ body.theme-light .theme__dark {
 }
 .theme__dark:hover .theme__dark_icon, .theme__dark:focus .theme__dark_icon {
   fill: var(--active_color);
-}/*# sourceMappingURL=index.css.map */
+}
