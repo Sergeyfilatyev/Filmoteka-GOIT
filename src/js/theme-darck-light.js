@@ -1,7 +1,13 @@
 import { refs } from './refs';
-import { addToStorage, getFromStorage } from './localStorage';
+import { addToStorage } from './localStorage';
 
 const { body, darkThemeBtn, lightThemeBtn } = refs;
+
+function getnevFromStorage(key) {
+  const savedData = localStorage.getItem(key);
+  const parsedData = JSON.parse(savedData);
+  return parsedData;
+}
 
 const theme = {
   LIGHT: 'theme-light',
@@ -10,11 +16,12 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-let newTheme = getFromStorage('n-theme');
+let newTheme = getnevFromStorage('n-theme');
 
 if (!newTheme) {
   newTheme = LIGHT;
   addToStorage('n-theme', LIGHT);
+  body.classList.add('theme-light');
 } else {
   body.classList.add(newTheme);
 }

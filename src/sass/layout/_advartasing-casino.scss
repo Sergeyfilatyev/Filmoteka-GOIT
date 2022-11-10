@@ -1,0 +1,38 @@
+.adver-kazino {
+  position: fixed;
+  /* Фиксированное положение */
+  right: 40px;
+  /* Расстояние от правого края окна браузера */
+  top: 63%;
+  /* Расстояние сверху */
+  background: #ffe;
+  /* Цвет фона */
+  border: 1px solid #333;
+  /* Параметры рамки */
+  z-index: 11;
+  visibility: hidden;
+}
+
+.link-adver-kazino {
+  right: 10%;
+  top: 10%;
+}
+.pseudo-close {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+
+.close_modal_advertising {
+  position: absolute;
+  right: -20px;
+  top: -35px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.close_advertising {
+  visibility: inherit;
+}
+.kazino_modal-add {
+  visibility: inherit;
+}

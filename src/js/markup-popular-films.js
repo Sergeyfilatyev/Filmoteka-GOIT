@@ -1,6 +1,6 @@
 import { fetchPopular } from './fetch';
 import { refs } from './refs';
-import { createPagination } from './pagination';
+import { createPagination } from './pagination
 import { addToStorage, getFromStorage } from './localStorage';
 
 if (!getFromStorage('watched')) {
@@ -10,6 +10,8 @@ if (!getFromStorage('watched')) {
 if (!getFromStorage('queue')) {
   addToStorage('queue', []);
 }
+
+
 
 export async function markupPopularFilms(page) {
   // const popularFilms = document.querySelector('.popular-films');
