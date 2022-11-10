@@ -56,9 +56,7 @@ export async function fetchPopular(page) {
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchByName(query, page) {
@@ -70,7 +68,7 @@ export async function fetchByName(query, page) {
     );
 
     const genderId = await fetchGenresId();
-    console.log(response);
+
     const movies = response.data.results.map(object => {
       // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       let cover;
@@ -111,14 +109,10 @@ export async function fetchByName(query, page) {
     };
     refs.type = result.type;
 
-    console.log(result);
-
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchById(id) {
@@ -164,9 +158,7 @@ export async function fetchById(id) {
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchTrailer(id) {
@@ -180,9 +172,7 @@ export async function fetchTrailer(id) {
     document.querySelector('.spinner').style.display = 'none';
 
     return response;
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchGenresId() {
@@ -191,7 +181,5 @@ export async function fetchGenresId() {
       `${BASIC_QUERY_LINK}/genre/movie/list?api_key=${API_KEY}`
     );
     return response.data.genres;
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }

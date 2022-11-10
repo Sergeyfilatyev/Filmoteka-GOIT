@@ -161,7 +161,7 @@
 .youtube-btn {
   width: 240px;
   height: 360px;
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 20px;
   border: none;
@@ -213,6 +213,9 @@
     justify-content: flex-end;
     padding-top: 0;
   }
+  .movie-description {
+    margin-bottom: 20px;
+  }
 
   .modal-btn {
     width: 125px;
@@ -243,7 +246,7 @@
   }
 
   .modal-btns-wrapper {
-    position: absolute;
+    position: fixed;
     right: 24%;
     bottom: 20%;
   }
@@ -254,5 +257,12 @@
   .youtube-btn {
     width: 280px;
     height: 398px;
+  }
+
+  .movie-description {
+    display: block;
+    overflow: auto;
+    width: 450px;
+    margin-bottom: 20px;
   }
 } ;

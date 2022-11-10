@@ -22,7 +22,6 @@
     "basiclightbox": "^5.0.4",
     "firebase": "^9.13.0",
     "lodash.throttle": "^4.1.1",
-    "micromodal": "^0.4.10",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5"
   },
