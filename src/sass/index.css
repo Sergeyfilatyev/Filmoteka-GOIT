@@ -619,7 +619,7 @@ button {
 .popular-films {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -689,17 +689,11 @@ button {
 .btn-youtube {
   position: absolute;
   width: 50px;
-  height: 30px;
-  top: 10px;
-  left: 10px;
+  height: 35px;
+  top: 0px;
+  left: 0px;
   border: none;
   background-color: transparent;
-}
-
-.icon-youtube {
-  width: 50px;
-  height: 30px;
-  fill: #ff0000;
 }
 
 @media screen and (min-width: 768px) {
@@ -721,17 +715,13 @@ button {
     font-size: 14px;
   }
   .btn-youtube {
-    width: 70px;
-    height: 50px;
-  }
-  .icon-youtube {
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 45px;
   }
 }
 @media screen and (min-width: 1280px) {
   .popular-films {
-    gap: 18px;
+    gap: 32px;
   }
   .popular-film__card {
     width: 280px;
@@ -752,11 +742,7 @@ button {
   }
   .btn-youtube {
     width: 50px;
-    height: 30px;
-  }
-  .icon-youtube {
-    width: 50px;
-    height: 30px;
+    height: 35px;
   }
 }
 .watched-film__card {
