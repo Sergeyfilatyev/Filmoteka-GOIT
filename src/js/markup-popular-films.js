@@ -2,8 +2,7 @@ import { fetchPopular } from './fetch';
 import { refs } from './refs';
 import { createPagination } from './pagination';
 import { addToStorage } from './localStorage';
-addToStorage('watched', []);
-addToStorage('queue', []);
+
 export async function markupPopularFilms(page) {
   // const popularFilms = document.querySelector('.popular-films');
   refs.popularFilms.innerHTML = '';
