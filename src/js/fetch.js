@@ -68,7 +68,7 @@ export async function fetchByName(query, page) {
     );
 
     const genderId = await fetchGenresId();
-    console.log(response);
+
     const movies = response.data.results.map(object => {
       // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       let cover;
