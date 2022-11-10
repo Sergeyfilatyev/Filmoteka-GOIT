@@ -170,6 +170,20 @@ button {
   outline: none;
 }
 
+.header__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.header__input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
 .header__input::placeholder {
   font-weight: 400;
   font-size: 14px;
@@ -181,6 +195,7 @@ button {
 .header__input:-webkit-autofill:hover,
 .header__input:-webkit-autofill:focus {
   -webkit-text-fill-color: #ffffff;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -419,10 +434,12 @@ button {
   stroke-dasharray: 62.75 188.25;
 }
 #wifi-loader svg.circle-outer circle.back {
-  animation: circle-outer 1.8s ease infinite 0.3s;
+  -webkit-animation: circle-outer 1.8s ease infinite 0.3s;
+          animation: circle-outer 1.8s ease infinite 0.3s;
 }
 #wifi-loader svg.circle-outer circle.front {
-  animation: circle-outer 1.8s ease infinite 0.15s;
+  -webkit-animation: circle-outer 1.8s ease infinite 0.15s;
+          animation: circle-outer 1.8s ease infinite 0.15s;
 }
 #wifi-loader svg.circle-middle {
   height: 60px;
@@ -432,10 +449,12 @@ button {
   stroke-dasharray: 42.5 127.5;
 }
 #wifi-loader svg.circle-middle circle.back {
-  animation: circle-middle 1.8s ease infinite 0.25s;
+  -webkit-animation: circle-middle 1.8s ease infinite 0.25s;
+          animation: circle-middle 1.8s ease infinite 0.25s;
 }
 #wifi-loader svg.circle-middle circle.front {
-  animation: circle-middle 1.8s ease infinite 0.1s;
+  -webkit-animation: circle-middle 1.8s ease infinite 0.1s;
+          animation: circle-middle 1.8s ease infinite 0.1s;
 }
 #wifi-loader svg.circle-inner {
   height: 34px;
@@ -445,10 +464,30 @@ button {
   stroke-dasharray: 22 66;
 }
 #wifi-loader svg.circle-inner circle.back {
-  animation: circle-inner 1.8s ease infinite 0.2s;
+  -webkit-animation: circle-inner 1.8s ease infinite 0.2s;
+          animation: circle-inner 1.8s ease infinite 0.2s;
 }
 #wifi-loader svg.circle-inner circle.front {
-  animation: circle-inner 1.8s ease infinite 0.05s;
+  -webkit-animation: circle-inner 1.8s ease infinite 0.05s;
+          animation: circle-inner 1.8s ease infinite 0.05s;
+}
+
+@-webkit-keyframes circle-outer {
+  0% {
+    stroke-dashoffset: 25;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 301;
+  }
+  80% {
+    stroke-dashoffset: 276;
+  }
+  100% {
+    stroke-dashoffset: 276;
+  }
 }
 
 @keyframes circle-outer {
@@ -468,6 +507,23 @@ button {
     stroke-dashoffset: 276;
   }
 }
+@-webkit-keyframes circle-middle {
+  0% {
+    stroke-dashoffset: 17;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 204;
+  }
+  80% {
+    stroke-dashoffset: 187;
+  }
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
 @keyframes circle-middle {
   0% {
     stroke-dashoffset: 17;
@@ -483,6 +539,23 @@ button {
   }
   100% {
     stroke-dashoffset: 187;
+  }
+}
+@-webkit-keyframes circle-inner {
+  0% {
+    stroke-dashoffset: 9;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-dashoffset: 106;
+  }
+  80% {
+    stroke-dashoffset: 97;
+  }
+  100% {
+    stroke-dashoffset: 97;
   }
 }
 @keyframes circle-inner {
@@ -502,15 +575,32 @@ button {
     stroke-dashoffset: 97;
   }
 }
-@keyframes text-animation {
+@-webkit-keyframes text-animation {
   0% {
-    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
   }
   50% {
-    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
   100% {
-    clip-path: inset(0 0 0 100%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+}
+@keyframes text-animation {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
   }
 }
 .empty-page {
@@ -1006,8 +1096,14 @@ button {
     height: 398px;
   }
 }
-.backdrop_footer.visibility-hidden .modal {
+.backdrop_footer.visibility-hidden .modal_footer {
   transform: translate(-50%, -50%) scale(0.75);
+}
+
+.backdrop_footer.visibility-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal_footer {
@@ -1101,12 +1197,6 @@ button {
 }
 .social_link:hover .social_icon, .social_link:focus .social_icon {
   fill: var(--active_color);
-}
-
-.visibility-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -1249,6 +1339,10 @@ body.theme-dark .theme__dark_icon {
 body.theme-dark .popular-film__card {
   background-color: #301d12;
 }
+body.theme-dark .popular-film__card:hover,
+body.theme-dark .popular-film__card:focus {
+  box-shadow: 8px 12px 14px 2px rgba(179, 144, 144, 0.6);
+}
 body.theme-dark .watched-film__card {
   background-color: #301d12;
 }
@@ -1268,14 +1362,24 @@ body.theme-dark .modal-btn {
 body.theme-dark .current-btn {
   border-color: transparent;
 }
-body.theme-dark .pagination ul li.next {
-  background-color: #543d31;
+body.theme-dark .pagination ul li.active,
+body.theme-dark .pagination ul li.numb:hover,
+body.theme-dark .pagination ul li.btn:hover {
+  background: #ff6b08;
 }
-body.theme-dark .pagination ul li.prev {
+body.theme-dark .pagination ul li.numb,
+body.theme-dark .pagination ul li.btn,
+body.theme-dark .pagination ul li.next,
+body.theme-dark .pagination ul li.prev,
+body.theme-dark .dots {
+  color: #fff;
   background-color: #543d31;
 }
 body.theme-dark .up-btn-wrapper {
   color: var(--active_color);
+}
+body.theme-dark .empty-page_text {
+  color: var(--main-accent-color);
 }
 
 body.theme-light {
@@ -1301,8 +1405,8 @@ body.theme-light .theme__dark {
 
 .theme {
   position: absolute;
-  right: 60px;
-  bottom: 60px;
+  right: 50px;
+  bottom: 90px;
 }
 
 .theme__ligth {
@@ -1323,4 +1427,4 @@ body.theme-light .theme__dark {
 }
 .theme__dark:hover .theme__dark_icon, .theme__dark:focus .theme__dark_icon {
   fill: var(--active_color);
-}
+}/*# sourceMappingURL=index.css.map */
