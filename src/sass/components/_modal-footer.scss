@@ -1,5 +1,11 @@
-.backdrop_footer.visibility-hidden .modal {
+.backdrop_footer.visibility-hidden .modal_footer {
     transform: translate(-50%, -50%) scale(0.75);
+}
+
+.backdrop_footer.visibility-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .modal_footer {
@@ -28,7 +34,6 @@
     position: absolute;
     top: 8px;
     right: 8px;
-
     
     width: 30px;
     height: 30px;
@@ -111,12 +116,6 @@
     .social_link:focus & {
         fill: var(--active_color);;
     }
-}
-
-.visibility-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
 }
 
 @media screen and (min-width:768px) {

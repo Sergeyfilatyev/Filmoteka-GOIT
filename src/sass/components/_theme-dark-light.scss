@@ -13,12 +13,12 @@ body.theme-dark {
     background-color: #543d31;
   }
 
-  .team_item{
+  .team_item {
     background-color: #301d12;
     color: var(--main-accent-color);
   }
 
-  .social_icon{
+  .social_icon {
     fill: var(--main-accent-color);
   }
 
@@ -56,7 +56,12 @@ body.theme-dark {
     background-color: #301d12;
   }
 
-  .watched-film__card{
+    .popular-film__card:hover,
+    .popular-film__card:focus {
+      box-shadow: 8px 12px 14px 2px rgba(179, 144, 144, 0.6);
+    }
+
+  .watched-film__card {
     background-color: #301d12;
   }
 
@@ -81,16 +86,27 @@ body.theme-dark {
     border-color: transparent;
   }
 
-  .pagination ul li.next {
-    background-color: #543d31;
+  .pagination ul li.active,
+  .pagination ul li.numb:hover,
+  .pagination ul li.btn:hover {
+    background: #ff6b08;
   }
 
-  .pagination ul li.prev {
+  .pagination ul li.numb,
+  .pagination ul li.btn,
+  .pagination ul li.next,
+  .pagination ul li.prev,
+  .dots {
+    color: #fff;
     background-color: #543d31;
   }
 
   .up-btn-wrapper {
-      color: var(--active_color);
+    color: var(--active_color);
+  }
+
+  .empty-page_text{
+    color: var(--main-accent-color);
   }
 }
 
@@ -121,8 +137,8 @@ body.theme-light {
 
 .theme {
   position: absolute;
-  right: 60px;
-  bottom: 60px;
+  right: 50px;
+  bottom: 90px;
 }
 
 .theme__ligth {
