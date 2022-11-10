@@ -1,3 +1,5 @@
+const basicLightbox = require('basiclightbox');
+import * as basicLightbox from 'basiclightbox';
 import { TimeoutAddAdvertising } from './adverttisingCasino';
 import {
   addToStorage,
@@ -18,3 +20,13 @@ function closeModalCasino() {
   addNext.classList.add('kazino-close');
   TimeoutAddAdvertising();
 }
+const instance = basicLightbox.create(`
+      <iframe src="https://www.youtube.com/embed/isKgYZjbq-I" width="850" height="515" frameborder="0"></iframe>
+  `);
+function openVideo(event) {
+  event.preventDefault();
+  instance.show();
+}
+document
+  .querySelector('.show-video-second')
+  .addEventListener('click', openVideo);
