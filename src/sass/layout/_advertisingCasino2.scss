@@ -1,0 +1,28 @@
+.adver-kazino2 {
+  position: fixed;
+  right: 40px;
+  top: 63%;
+  background: #ffe;
+  border: 1px solid #333;
+  z-index: 11;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.link-adver-kazino2 {
+  right: 10%;
+  top: 10%;
+}
+.pseudo-close2 {
+  position: absolute;
+  width: 20px;
+  top: 2px;
+  right: 2px;
+}
+
+.kazino_modal-add2 {
+  visibility: inherit;
+}
+.kazino-close {
+  display: none;
+}
