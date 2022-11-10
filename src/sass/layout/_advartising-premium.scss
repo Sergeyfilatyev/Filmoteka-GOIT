@@ -1,0 +1,127 @@
+.premium {
+  width: 300px;
+  height: 300px;
+  border: 2px solid var(--active_color);
+  border-radius: 5%;
+  position: fixed;
+  right: 27px;
+  top: 59%;
+  z-index: 11;
+  background-color: white;
+  -webkit-animation: blink1 3s linear infinite;
+  animation: blink1 3s linear infinite;
+  display: none;
+
+  @-webkit-keyframes blink1 {
+    0% {
+      color: rgba(34, 34, 34, 1);
+    }
+
+    50% {
+      color: rgba(34, 34, 34, 0);
+    }
+
+    100% {
+      color: rgba(34, 34, 34, 1);
+    }
+  }
+
+  @keyframes blink1 {
+    0% {
+      color: rgba(34, 34, 34, 1);
+    }
+
+    50% {
+      color: rgba(34, 34, 34, 0);
+    }
+
+    100% {
+      color: rgba(34, 34, 34, 1);
+    }
+  }
+}
+.premium_active {
+  display: grid;
+}
+.premium-title {
+  padding-top: 27px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.premium-description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.premium-btn_position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.premium-btn {
+  background-color: var(--active_color);
+  color: white;
+  cursor: pointer;
+  padding: 14px 7px;
+  margin: 15px 0;
+  border-radius: 12px;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 60, 0, 0.513);
+  }
+
+  // transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-subscribe {
+  display: flex;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    color: #0e72ed;
+  }
+}
+
+.premium-text {
+  margin-top: 35px;
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+  cursor: pointer;
+  color: black;
+
+  &:hover,
+  &:focus {
+    color: var(--active_color);
+  }
+}
+.position_premium {
+  position: static;
+}
+.add-text-premium {
+  color: var(--active_color);
+
+  font-size: 14px;
+  line-height: 1.2;
+  animation: blur 0.75s ease-out infinite;
+  opacity: 0;
+}
+
+.add-text-premium-active {
+  position: absolute;
+  opacity: 1;
+  position: relative;
+  top: 22px;
+  left: -64px;
+
+  @media screen and (max-width: 767px) {
+    top: 5px;
+    left: -4px;
+  }
+}

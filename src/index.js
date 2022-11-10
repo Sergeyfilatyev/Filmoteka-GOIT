@@ -9,8 +9,9 @@ import './js/modal-footer';
 
 import './js/modal-movie';
 
-// import './js/watched-queued-library'
-
 import './js/pagination';
 import './js/firebase';
 import './js/modalAuthor';
+import './js/adverttisingCasino';
+import './js/advertisingPremium';
+import './js/advertisingCasino2';
