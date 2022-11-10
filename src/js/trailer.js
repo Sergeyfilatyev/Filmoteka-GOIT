@@ -5,6 +5,7 @@ import { refs } from './refs';
 
 if (refs.header.classList.contains('header__library')) {
   refs.watchedFilmsList.addEventListener('click', modalTrailerStart);
+  refs.watchedFilmsList.addEventListener('click', mainTrailerStart);
 } else {
   refs.popularFilms.addEventListener('click', modalTrailerStart);
   refs.popularFilms.addEventListener('click', mainTrailerStart);
