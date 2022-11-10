@@ -7,7 +7,7 @@ export const refs = {
   searchForm: document.querySelector('.header__form'),
   searchInput: document.querySelector('.header__input'),
 
-  openModalFooter: document.querySelector('[data-modal-footer-open]'),
+  openModalFooter: document.querySelector('[data-modal-open-footer]'),
   closeModalFooter: document.querySelector('[data-modal-footer-close]'),
   modalFooter: document.querySelector('[data-modal-footer]'),
 
