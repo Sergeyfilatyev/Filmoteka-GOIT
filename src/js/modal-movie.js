@@ -23,6 +23,10 @@ async function onMovieImageClick(event) {
     return;
   }
 
+  if (event.target.closest('.btn-youtube')) {
+    return;
+  }
+
   const movie = await fetchById(
     event.target.closest('.popular-film__card').dataset.id
   );

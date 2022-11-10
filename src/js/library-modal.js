@@ -119,8 +119,8 @@ function deleteWatchedFilm(data) {
         renderWatchedFilms();
       } else {
         refs.watchedFilmsList.innerHTML = `
-    <div class="empty-page">
-    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+     <div class="empty-page">
+    <img src="/Filmoteka-GOIT/desert.049350d2.png" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
@@ -146,7 +146,7 @@ function deleteQueueFilm(data) {
       } else {
         refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/desert.049350d2.png" alt="no films img" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
