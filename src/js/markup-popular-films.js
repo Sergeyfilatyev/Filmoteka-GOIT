@@ -1,9 +1,16 @@
 import { fetchPopular } from './fetch';
 import { refs } from './refs';
 import { createPagination } from './pagination';
-import { addToStorage } from './localStorage';
-addToStorage('watched', []);
-addToStorage('queue', []);
+import { addToStorage, getFromStorage } from './localStorage';
+
+if (!getFromStorage('watched')) {
+  addToStorage('watched', []);
+}
+
+if (!getFromStorage('queue')) {
+  addToStorage('queue', []);
+}
+
 export async function markupPopularFilms(page) {
   // const popularFilms = document.querySelector('.popular-films');
   refs.popularFilms.innerHTML = '';

@@ -1,7 +1,8 @@
 import { refs } from './refs';
 
-export { renderWatchedFilms, renderQueueFilms };
-function renderWatchedFilms() {
+import './modal-movie';
+
+export function renderWatchedFilms() {
   refs.watchedFilmsList.innerHTML = '';
   const watchedFilms = JSON.parse(localStorage.getItem('watched'));
 
@@ -18,7 +19,7 @@ function renderWatchedFilms() {
     if (movie.genres.length >= 3) {
       refs.watchedFilmsList.insertAdjacentHTML(
         'beforeend',
-        `<li class="watched-film__card"  data-id="${movie.id}" >
+        `<li class="popular-film__card"  data-id="${movie.id}" >
           <img 
             class="popular-film__cover"
             src="${movie.cover}"
@@ -38,7 +39,7 @@ function renderWatchedFilms() {
     }
     refs.watchedFilmsList.insertAdjacentHTML(
       'beforeend',
-      `<li class="watched-film__card"  data-id="${movie.id}">
+      `<li class="popular-film__card"  data-id="${movie.id}">
       <img 
         class="popular-film__cover"
         src="${movie.cover}"
@@ -57,7 +58,7 @@ function renderWatchedFilms() {
   });
 }
 
-function renderQueueFilms() {
+export function renderQueueFilms() {
   refs.watchedFilmsList.innerHTML = '';
   const queueFilms = JSON.parse(localStorage.getItem('queue'));
 
@@ -74,7 +75,7 @@ function renderQueueFilms() {
     if (movie.genres.length >= 3) {
       refs.watchedFilmsList.insertAdjacentHTML(
         'beforeend',
-        `<li class="watched-film__card"  data-id="${movie.id}" >
+        `<li class="popular-film__card"  data-id="${movie.id}" >
           <img 
             class="popular-film__cover"
             src="${movie.cover}"
@@ -94,7 +95,7 @@ function renderQueueFilms() {
     }
     refs.watchedFilmsList.insertAdjacentHTML(
       'beforeend',
-      `<li class="watched-film__card"  data-id="${movie.id}">
+      `<li class="popular-film__card"  data-id="${movie.id}">
       <img 
         class="popular-film__cover"
         src="${movie.cover}"
