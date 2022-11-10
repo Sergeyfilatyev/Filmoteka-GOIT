@@ -33,4 +33,6 @@ export const refs = {
   body: document.querySelector('body'),
   darkThemeBtn: document.querySelector('[data-theme-dark]'),
   lightThemeBtn: document.querySelector('[data-theme-light]'),
+
+  backdropFooter: document.querySelector('.backdrop_footer'),
 };
