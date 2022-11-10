@@ -15,11 +15,18 @@ refs.watchedFilmsList.addEventListener('click', onMovieImageClick);
 refs.modalCloseBtn.addEventListener('click', onCloseBtnClick);
 
 async function onMovieImageClick(event) {
-  if (event.target.nodeName !== 'IMG') {
+  event.preventDefault();
+  if (!event.target.closest('.watched-film__card')) {
     return;
   }
 
-  const movie = await fetchById(event.target.dataset.id);
+  if (event.target.closest('.btn-youtube')) {
+    return;
+  }
+
+  const movie = await fetchById(
+    event.target.closest('.watched-film__card').dataset.id
+  );
 
   refs.modalContainer.innerHTML = '';
   refs.modalContainer.insertAdjacentHTML(
@@ -55,6 +62,7 @@ async function onMovieImageClick(event) {
 
   openModal();
   movieForStorage = movie;
+  refs.youtubeBtn.dataset.id = movieForStorage.id;
 
   if (
     document
@@ -62,7 +70,7 @@ async function onMovieImageClick(event) {
       .classList.contains('active-header-button')
   ) {
     const watchedDelete = document.querySelector('.watched');
-    watchedDelete.textContent = 'REMOVE';
+    watchedDelete.textContent = 'REMOVE WATCHED';
     watchedDelete.addEventListener('click', () => {
       deleteWatchedFilm(movie);
     });
@@ -70,7 +78,7 @@ async function onMovieImageClick(event) {
     addToQueue.addEventListener('click', onQueuedBtnClick);
   } else {
     const queueDelete = document.querySelector('.queue');
-    queueDelete.textContent = 'REMOVE';
+    queueDelete.textContent = 'REMOVE QUEUE';
     queueDelete.addEventListener('click', () => {
       deleteQueueFilm(movie);
     });
@@ -81,13 +89,15 @@ async function onMovieImageClick(event) {
 
 function openModal() {
   refs.backdrop.classList.remove('is-hidden');
-
+  refs.modal.classList.add('active');
   window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('stop-scrolling');
 }
 
 function closeModal() {
   refs.backdrop.classList.add('is-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('stop-scrolling');
 }
 function onCloseBtnClick() {
   closeModal();
@@ -113,8 +123,8 @@ function deleteWatchedFilm(data) {
         renderWatchedFilms();
       } else {
         refs.watchedFilmsList.innerHTML = `
-    <div class="empty-page">
-    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+     <div class="empty-page">
+    <img src="/Filmoteka-GOIT/desert.8f266e6c.png" alt="no films img" width="600" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
@@ -140,7 +150,7 @@ function deleteQueueFilm(data) {
       } else {
         refs.watchedFilmsList.innerHTML = `
     <div class="empty-page">
-    <img src="/Filmoteka-GOIT/empty.9c479684.jpg" alt="no films img" />
+    <img src="/Filmoteka-GOIT/desert.8f266e6c.png" alt="no films img" width="600" />
     <span class="empty-page_text">There are no films here yet</span>
   </div>
     `;
@@ -150,8 +160,6 @@ function deleteQueueFilm(data) {
     }
   });
 }
-
-//?   то что добавил к Леры файлу moda-movie ========================================================================
 
 function checkLibraryStorage() {
   if (getFromStorage('watched')) {

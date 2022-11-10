@@ -1,8 +1,19 @@
+.pagination {
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .pagination {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
 .pagination ul {
     // display: flex;
     min-width: 374px;
     // background-color: aquamarine;
-    padding: 8px;
+
     border-radius: 10px;
 }
 
@@ -66,3 +77,4 @@
     color: #fff;
     background: #FF6B08;
 }
+

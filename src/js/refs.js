@@ -3,6 +3,7 @@ export const refs = {
   popularFilms: document.querySelector('.popular-films'),
   headerWatchedButton: document.querySelector('.header__watched_button'),
   headerQueueButton: document.querySelector('.header__queue_button'),
+  header: document.querySelector('.header'),
   searchForm: document.querySelector('.header__form'),
   searchInput: document.querySelector('.header__input'),
 
@@ -13,6 +14,7 @@ export const refs = {
   backdrop: document.querySelector('.backdrop'),
   modal: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal-btn-close'),
+  youtubeBtn: document.querySelector('.youtube-btn'),
 
   modalContainer: document.querySelector('.modal-container'),
 
@@ -28,4 +30,9 @@ export const refs = {
 
   watchedFilmsList: document.querySelector('.watchedFilms'),
 
+  body: document.querySelector('body'),
+  darkThemeBtn: document.querySelector('[data-theme-dark]'),
+  lightThemeBtn: document.querySelector('[data-theme-light]'),
+
+  backdropFooter: document.querySelector('.backdrop_footer'),
 };

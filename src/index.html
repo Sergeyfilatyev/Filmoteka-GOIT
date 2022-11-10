@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Filmoteka" />
+    <link rel="icon" href="./images/favicon/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -12,24 +14,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="../css/index.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+
+    >>>>>>> main
     <title>Filmoteka</title>
   </head>
+
   <body>
     <include src="./partials/header-index.html"></include>
-    <include src="./partials/modalAuthor.html"></include>
-    <include src="./partials/spinner.html"></include>
-    <include src="./partials/popular-films.html"></include>
-    <include src="./partials/modal-movie.html"></include>
-    <include src="./partials/btn-up.html"></include>
-    <include src="./partials/pagination.html"></include>
-    <include src="./partials/advertising-casino.html"></include>
-    <include src="./partials/advertising-premium.html"></include>
-    <include src="./partials/footer.html"></include>
+    <main>
+      <!-- <include src="./partials/modalAuthor.html"></include> -->
+      <include src="./partials/spinner.html"></include>
+      <include src="./partials/popular-films.html"></include>
+      <include src="./partials/modal-movie.html"></include>
+      <include src="./partials/btn-up.html"></include>
+      <include src="./partials/advertising-casino.html"></include>
+      <include src="./partials/advertising-premium.html"></include>
+      <include src="./partials/advertisingCasino2.html"></include>
+      <include src="./partials/popular-films-search-films.html"></include>
+      <include src="./partials/pagination.html"></include>
+      <include src="./partials/modal-footer.html"></include>
+      <include src="./partials/preloader.html"></include>
+    </main>
     <include src="./partials/modal-footer.html"></include>
-    <include src="./partials/advertisingCasino2.html"></include>
-    <script src="./index.js" type="module"></script>
 
-    <!-- <script src="./js/spinner.js"></script> -->
+    <script src="./index.js" type="module"></script>
   </body>
 </html>

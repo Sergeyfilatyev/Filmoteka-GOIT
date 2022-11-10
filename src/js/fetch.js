@@ -16,7 +16,14 @@ export async function fetchPopular(page) {
     const genderId = await fetchGenresId();
 
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
@@ -49,9 +56,7 @@ export async function fetchPopular(page) {
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchByName(query, page) {
@@ -63,9 +68,16 @@ export async function fetchByName(query, page) {
     );
 
     const genderId = await fetchGenresId();
-    console.log(response);
+
     const movies = response.data.results.map(object => {
-      let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      let cover;
+
+      if (object.poster_path) {
+        cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
+      } else {
+        cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+      }
       let name = object.title;
       let year = object.release_date.substring(0, 4);
       let id = object.id;
@@ -97,14 +109,10 @@ export async function fetchByName(query, page) {
     };
     refs.type = result.type;
 
-    console.log(result);
-
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchById(id) {
@@ -114,8 +122,16 @@ export async function fetchById(id) {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
-    let cover =
-      'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    // let cover =
+    //   'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    let cover;
+
+    if (response.data.poster_path) {
+      cover =
+        'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+    } else {
+      cover = 'https://i.ibb.co/VWdqDHy/no-image.jpg';
+    }
     let year = response.data.release_date.substring(0, 4);
     let name = response.data.title;
     let rating = response.data.vote_average;
@@ -142,9 +158,7 @@ export async function fetchById(id) {
     document.querySelector('.spinner').style.display = 'none';
 
     return result;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function fetchTrailer(id) {
@@ -155,15 +169,10 @@ export async function fetchTrailer(id) {
       `${BASIC_QUERY_LINK}/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
     );
 
-    const result =
-      'https://www.youtube.com/watch?v=' + response.data.results[0].key;
-
     document.querySelector('.spinner').style.display = 'none';
 
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
+    return response;
+  } catch (error) {}
 }
 
 export async function fetchGenresId() {
@@ -172,7 +181,5 @@ export async function fetchGenresId() {
       `${BASIC_QUERY_LINK}/genre/movie/list?api_key=${API_KEY}`
     );
     return response.data.genres;
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
