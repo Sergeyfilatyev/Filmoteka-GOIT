@@ -2,7 +2,6 @@ import { refs } from './refs';
 import { markupSearchFilms } from './markup-search-films';
 import { createPagination } from './pagination';
 
-
 const textError = document.querySelector('.header__error');
 
 textError.textContent = '';
@@ -10,7 +9,7 @@ textError.textContent = '';
 refs.searchForm.addEventListener('submit', () => {
   event.preventDefault();
   createPagination(refs.totalPages, 1);
-  
+
   submitForm();
 });
 
@@ -34,8 +33,6 @@ async function submit(event) {
       refs.searchInput.value,
       event.target.dataset.id
     );
-  } else {
-    console.log(submit);
   }
   createPagination(refs.totalPages, refs.currentPage);
   return markupPagination;
