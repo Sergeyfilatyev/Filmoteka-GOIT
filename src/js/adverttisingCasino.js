@@ -55,11 +55,86 @@ closeBelowAdvertising.addEventListener('click', closeBelowIcon);
 function closeBelowIcon() {
   belowAdvertising.classList.add('advertising-below_hidden');
 }
-const instance = basicLightbox.create(`
-      <iframe src="https://www.youtube.com/embed/K7e3jpYf28I" width="850" height="515" frameborder="0"></iframe>
-  `);
+
 function openVideo(event) {
   event.preventDefault();
-  instance.show();
+
+  if (document.documentElement.clientWidth >= 1200) {
+    const instance = basicLightbox.create(
+      `
+  <iframe src="https://www.youtube.com/embed/K7e3jpYf28I?&autoplay=1" width="${
+    +document.documentElement.clientWidth * 0.85
+  }" height="${
+        +document.documentElement.clientHeight * 0.75
+      }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`,
+      {
+        onShow: instance => document.addEventListener('keydown', onEscKeyPress),
+        onClose: instance =>
+          document.removeEventListener('keydown', onEscKeyPress),
+      }
+    );
+    instance.show();
+
+    function onEscKeyPress(event) {
+      if (event.key === 'Escape') {
+        instance.close();
+      }
+    }
+
+    return;
+  }
+
+  if (document.documentElement.clientWidth >= 768) {
+    const instance = basicLightbox.create(
+      `
+  <iframe src="https://www.youtube.com/embed/K7e3jpYf28I?&autoplay=1" width="${
+    +document.documentElement.clientWidth * 0.75
+  }" height="${
+        +document.documentElement.clientHeight * 0.5
+      }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`,
+      {
+        onShow: instance => document.addEventListener('keydown', onEscKeyPress),
+        onClose: instance =>
+          document.removeEventListener('keydown', onEscKeyPress),
+      }
+    );
+    instance.show();
+
+    function onEscKeyPress(event) {
+      if (event.key === 'Escape') {
+        instance.close();
+      }
+    }
+
+    return;
+  }
+
+  if (document.documentElement.clientWidth >= 320) {
+    const instance = basicLightbox.create(
+      `
+  <iframe src="https://www.youtube.com/embed/K7e3jpYf28I?&autoplay=1" width="${
+    +document.documentElement.clientWidth * 0.9
+  }" height="${
+        +document.documentElement.clientHeight * 0.35
+      }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`,
+      {
+        onShow: instance => document.addEventListener('keydown', onEscKeyPress),
+        onClose: instance =>
+          document.removeEventListener('keydown', onEscKeyPress),
+      }
+    );
+    instance.show();
+
+    function onEscKeyPress(event) {
+      if (event.key === 'Escape') {
+        instance.close();
+      }
+    }
+
+    return;
+  }
 }
 document.querySelector('.show-video').addEventListener('click', openVideo);
