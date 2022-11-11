@@ -40,7 +40,7 @@ export async function markupSearchFilms(query, page) {
             loading="lazy"
           />
           <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-            <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
+            <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
           </button>
           <div class="info">
             <p class="info__name">${name}</p>
@@ -60,7 +60,7 @@ export async function markupSearchFilms(query, page) {
         loading="lazy"
       />
       <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-        <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
+        <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
       </button>
       <div class="info">
         <p class="info__name">${name}</p>
