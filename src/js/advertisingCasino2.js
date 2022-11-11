@@ -8,7 +8,7 @@ import {
 } from './localStorage';
 const addNext = document.querySelector('.adver-kazino2');
 const CloseCasino = document.querySelector('.pseudo-close2');
-// const addCasinoNext = document.querySelector
+
 addNext.addEventListener('click', addCasino);
 
 export function addCasino() {

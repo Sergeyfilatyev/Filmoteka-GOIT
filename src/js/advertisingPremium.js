@@ -13,8 +13,7 @@ const belowAdvertising = document.querySelector('.advertising-below');
 const closebelowAdvertising = document.querySelector(
   '.advertising-below__close-icon'
 );
-// closePreviousModal.addEventListener('click', openNewModal);
-// addToStorage('premium', []);
+
 export function openNewModal() {
   premium.classList.add('premium_active');
 }

@@ -1,7 +1,5 @@
 import { refs } from './refs';
 import { renderWatchedFilms, renderQueueFilms } from './watchedRender';
-// const headerWatchedButton = document.querySelector('.header__watched_button');
-// const headerQueueButton = document.querySelector('.header__queue_button');
 
 refs.headerWatchedButton.addEventListener('click', () => {
   if (refs.headerWatchedButton.classList.contains('active-header-button')) {

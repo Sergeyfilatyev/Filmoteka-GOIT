@@ -325,52 +325,6 @@ button {
   padding: 2px 5px;
 }
 
-.footer {
-  padding-top: 29px;
-  padding-bottom: 29px;
-}
-
-.footer__container {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--footer-text-color);
-}
-
-.first-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.second-line {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.second-line__text {
-  display: inline-flex;
-  gap: 5px;
-}
-
-.modal-link {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 768px) {
-  .footer__container {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-  }
-  .first-line {
-    margin-bottom: 0;
-  }
-}
 .adver-kazino {
   position: fixed;
   /* Фиксированное положение */
@@ -1380,7 +1334,7 @@ button {
 }
 
 .info__name.info__name-dark {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .pagination {
@@ -1441,13 +1395,13 @@ button {
 
 .pagination ul li.prev {
   color: #000000;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 25px 5px 5px 25px;
 }
 
 .pagination ul li.next {
   color: #000000;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 5px 25px 25px 5px;
 }
 
@@ -1455,7 +1409,7 @@ button {
 .pagination ul li.numb:hover,
 .pagination ul li.btn:hover {
   color: #fff;
-  background: #FF6B08;
+  background: #ff6b08;
 }
 
 .preloader {
@@ -1666,4 +1620,51 @@ body.theme-light .theme__dark {
 }
 .theme__dark:hover .theme__dark_icon, .theme__dark:focus .theme__dark_icon {
   fill: var(--active_color);
+}
+
+.footer {
+  padding-top: 29px;
+  padding-bottom: 29px;
+}
+
+.footer__container {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--footer-text-color);
+}
+
+.first-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.second-line {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second-line__text {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.modal-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  .first-line {
+    margin-bottom: 0;
+  }
 }

@@ -16,7 +16,6 @@ export async function fetchPopular(page) {
     const genderId = await fetchGenresId();
 
     const movies = response.data.results.map(object => {
-      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       let cover;
 
       if (object.poster_path) {
@@ -70,7 +69,6 @@ export async function fetchByName(query, page) {
     const genderId = await fetchGenresId();
 
     const movies = response.data.results.map(object => {
-      // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
       let cover;
 
       if (object.poster_path) {
@@ -122,8 +120,7 @@ export async function fetchById(id) {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
-    // let cover =
-    //   'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+
     let cover;
 
     if (response.data.poster_path) {

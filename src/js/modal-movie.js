@@ -62,8 +62,8 @@ async function onMovieImageClick(event) {
          </div>
          </div>
          <div class='modal-btns-wrapper'>
-         <button type="button" class="modal-btn watched">ADD TO WATCHED</button>
-    <button type="button" class="modal-btn queue">ADD TO QUEUE</button>
+         <button aria-label="watched" type="button" class="modal-btn watched">ADD TO WATCHED</button>
+    <button aria-label="queue" type="button" class="modal-btn queue">ADD TO QUEUE</button>
     </div>`
   );
   openModal();

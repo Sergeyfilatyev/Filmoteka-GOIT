@@ -8,8 +8,6 @@ import './js/modal-movie';
 import './js/pagination';
 import './js/preloader';
 import './js/theme-darck-light';
-// import './js/firebase';
-import './js/modalAuthor';
 import './js/adverttisingCasino';
 import './js/advertisingPremium';
 import './js/advertisingCasino2';
