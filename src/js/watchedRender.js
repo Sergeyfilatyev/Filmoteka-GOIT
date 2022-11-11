@@ -26,7 +26,7 @@ export function renderWatchedFilms() {
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}">
+          <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
           <div class="info">
@@ -46,7 +46,7 @@ export function renderWatchedFilms() {
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}">
+      <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
       <div class="info">
@@ -82,7 +82,7 @@ export function renderQueueFilms() {
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}">
+          <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
           <div class="info">
@@ -102,7 +102,7 @@ export function renderQueueFilms() {
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}">
+      <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
       <div class="info">

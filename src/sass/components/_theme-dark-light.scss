@@ -13,14 +13,10 @@ body.theme-dark {
     background-color: #543d31;
   }
 
-    .card-item {
-      background-color: #301d12;
-      color: var(--main-accent-color);
-    }
-  // .team_item {
-  //   background-color: #301d12;
-  //   color: var(--main-accent-color);
-  // }
+  .card-item {
+    background-color: #301d12;
+    color: var(--main-accent-color);
+  }
 
   .social_icon {
     fill: var(--main-accent-color);
@@ -60,10 +56,10 @@ body.theme-dark {
     background-color: #301d12;
   }
 
-    .popular-film__card:hover,
-    .popular-film__card:focus {
-      box-shadow: 8px 12px 14px 2px rgba(179, 144, 144, 0.6);
-    }
+  .popular-film__card:hover,
+  .popular-film__card:focus {
+    box-shadow: 8px 12px 14px 2px rgba(179, 144, 144, 0.6);
+  }
 
   .watched-film__card {
     background-color: #301d12;
@@ -96,11 +92,10 @@ body.theme-dark {
   .pagination ul li.prev,
   .dots {
     color: #fff;
-    
   }
 
   .pagination ul li.next,
-  .pagination ul li.prev{
+  .pagination ul li.prev {
     background-color: #543d31;
   }
 
@@ -108,7 +103,7 @@ body.theme-dark {
     color: var(--active_color);
   }
 
-  .empty-page_text{
+  .empty-page_text {
     color: var(--main-accent-color);
   }
 }

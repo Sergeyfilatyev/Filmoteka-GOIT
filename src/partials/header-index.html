@@ -15,7 +15,9 @@
       </a>
 
       <div class="header__buttons_wrapper">
-        <button class="header__btn current-button">HOME</button>
+        <button aria-label="header button" class="header__btn current-button">
+          HOME
+        </button>
         <a class="header__btn" href="./library.html"
           >MY LIBRARY
           <!-- <button class="header__btn">MY LIBRARY</button> -->
@@ -31,7 +33,9 @@
           name="query"
           placeholder="Movie search"
         />
-        <button type="submit" class="header__search">Search</button>
+        <button aria-label="header search" type="submit" class="header__search">
+          Search
+        </button>
       </form>
       <!-- Сюда на ошибку можно добавлять и убирать класс is-hidden  -->
       <span class="header__error"
@@ -40,12 +44,22 @@
       >
     </div>
     <div class="theme">
-      <button type="button" class="theme__dark" data-theme-dark>
+      <button
+        aria-label="change theme"
+        type="button"
+        class="theme__dark"
+        data-theme-dark
+      >
         <svg class="theme__dark_icon" width="30" height="30">
           <use href="./images/svg/sprite.svg#icon-dark"></use>
         </svg>
       </button>
-      <button type="button" class="theme__ligth" data-theme-light>
+      <button
+        aria-label="change theme"
+        type="button"
+        class="theme__ligth"
+        data-theme-light
+      >
         <svg class="theme__ligth_icon" width="30" height="30">
           <use href="./images/svg/sprite.svg#icon-light"></use>
         </svg>

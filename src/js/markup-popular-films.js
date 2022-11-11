@@ -1,6 +1,6 @@
 import { fetchPopular } from './fetch';
 import { refs } from './refs';
-// import { createPagination } from './pagination';
+
 import { addToStorage, getFromStorage } from './localStorage';
 
 if (!getFromStorage('watched')) {
@@ -12,7 +12,6 @@ if (!getFromStorage('queue')) {
 }
 
 export async function markupPopularFilms(page) {
-  // const popularFilms = document.querySelector('.popular-films');
   refs.popularFilms.innerHTML = '';
 
   const films = await fetchPopular(page);
@@ -42,7 +41,7 @@ export async function markupPopularFilms(page) {
             alt="${movie.name}"
             loading="lazy"
           />
-          <button class="btn-youtube" data-id="${movie.id}">
+          <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
           <div class="info">
@@ -62,7 +61,7 @@ export async function markupPopularFilms(page) {
         alt="${movie.name}"
         loading="lazy"
       />
-      <button class="btn-youtube" data-id="${movie.id}">
+      <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
             <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
           </button>
       <div class="info">
