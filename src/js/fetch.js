@@ -1,3 +1,4 @@
+import { addToStorage, getFromStorage } from './localStorage';
 import { refs } from './refs';
 
 const axios = require('axios').default;
@@ -13,7 +14,7 @@ export async function fetchPopular(page) {
       `${BASIC_QUERY_LINK}/trending/movie/week?api_key=${API_KEY}&page=${page}`
     );
 
-    const genderId = await fetchGenresId();
+    const genderId = getFromStorage('genres');
 
     const movies = response.data.results.map(object => {
       // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
@@ -67,7 +68,7 @@ export async function fetchByName(query, page) {
       `${BASIC_QUERY_LINK}/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`
     );
 
-    const genderId = await fetchGenresId();
+    const genderId = getFromStorage('genres');
 
     const movies = response.data.results.map(object => {
       // let cover = 'https://www.themoviedb.org/t/p/w1280' + object.poster_path;
@@ -122,8 +123,7 @@ export async function fetchById(id) {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
-    // let cover =
-    //   'https://www.themoviedb.org/t/p/w1280' + response.data.poster_path;
+
     let cover;
 
     if (response.data.poster_path) {
@@ -180,6 +180,15 @@ export async function fetchGenresId() {
     const response = await axios.get(
       `${BASIC_QUERY_LINK}/genre/movie/list?api_key=${API_KEY}`
     );
-    return response.data.genres;
+
+    const genres = response.data.genres;
+
+    addToStorage('genres', genres);
+
+    return genres;
   } catch (error) {}
 }
+
+if (getFromStorage('genres')) {
+  return;
+} else fetchGenresId();
