@@ -19,8 +19,8 @@ export async function markupSearchFilms(query, page) {
 
     if (document.documentElement.scrollWidth >= 1280) {
       name =
-        movie.name.length >= 33
-          ? movie.name.substring(0, 33) + '...'
+        movie.name.length >= 31
+          ? movie.name.substring(0, 31) + '...'
           : movie.name;
     } else if (document.documentElement.scrollWidth >= 768) {
       name =

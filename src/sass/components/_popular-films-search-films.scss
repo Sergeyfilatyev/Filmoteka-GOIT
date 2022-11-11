@@ -72,13 +72,12 @@
   position: absolute;
   width: 80px;
   top: 5px;
-  left: 5px;
+  left: 0px;
   border: none;
   background-color: transparent;
 }
 .icon-youtube{
   width: 80px;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -135,11 +134,9 @@
 
   .btn-youtube {
     width: 60px;
-
   }
 
   .icon-youtube{
     width: 60px;
-
   }
 }

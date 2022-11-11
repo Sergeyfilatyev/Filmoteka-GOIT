@@ -9,10 +9,15 @@ export function renderWatchedFilms() {
   watchedFilms.forEach(movie => {
     let name;
 
-    if (document.documentElement.scrollWidth >= 768) {
+    if (document.documentElement.scrollWidth >= 1280) {
       name =
-        movie.name.length >= 30
-          ? movie.name.substring(0, 30) + '...'
+        movie.name.length >= 31
+          ? movie.name.substring(0, 31) + '...'
+          : movie.name;
+    } else if (document.documentElement.scrollWidth >= 768) {
+      name =
+        movie.name.length >= 35
+          ? movie.name.substring(0, 35) + '...'
           : movie.name;
     } else name = movie.name;
 
@@ -27,8 +32,8 @@ export function renderWatchedFilms() {
             loading="lazy"
           />
           <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-            <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
-          </button>
+          <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
+        </button>
           <div class="info">
             <p class="info__name">${name}</p>
             <p class="info__other">${movie.genres[0]}, ${movie.genres[1]}, Other | ${movie.year}</p>
@@ -47,8 +52,8 @@ export function renderWatchedFilms() {
         loading="lazy"
       />
       <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-            <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
-          </button>
+      <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
+    </button>
       <div class="info">
         <p class="info__name">${name}</p>
         <p class="info__other">${movie.genres.join(', ')} | ${movie.year}</p>
@@ -65,10 +70,15 @@ export function renderQueueFilms() {
   queueFilms.forEach(movie => {
     let name;
 
-    if (document.documentElement.scrollWidth >= 768) {
+    if (document.documentElement.scrollWidth >= 1280) {
       name =
-        movie.name.length >= 30
-          ? movie.name.substring(0, 30) + '...'
+        movie.name.length >= 31
+          ? movie.name.substring(0, 31) + '...'
+          : movie.name;
+    } else if (document.documentElement.scrollWidth >= 768) {
+      name =
+        movie.name.length >= 35
+          ? movie.name.substring(0, 35) + '...'
           : movie.name;
     } else name = movie.name;
 
@@ -83,7 +93,7 @@ export function renderQueueFilms() {
             loading="lazy"
           />
           <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-            <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
+            <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
           </button>
           <div class="info">
             <p class="info__name">${name}</p>
@@ -103,7 +113,7 @@ export function renderQueueFilms() {
         loading="lazy"
       />
       <button aria-label="show movie" class="btn-youtube" data-id="${movie.id}">
-            <img class="icon-youtube" src="https://i.ibb.co/17hSwCj/youtube.png" alt="Button Youtube" />
+            <img class="icon-youtube" src="https://i.ibb.co/LJVXwMV/youtube-1.png" alt="Button Youtube" />
           </button>
       <div class="info">
         <p class="info__name">${name}</p>

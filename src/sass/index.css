@@ -899,7 +899,9 @@ button {
   position: absolute;
   width: 80px;
   top: 5px;
-  left: 5px;
+
+  left: 0px;
+
   border: none;
   background-color: transparent;
 }
@@ -1800,6 +1802,8 @@ body.theme-light .theme__dark {
   .first-line {
     margin-bottom: 0;
   }
+
+
   .second-line {
     gap: 5px;
   }
@@ -1812,4 +1816,5 @@ body.theme-light .theme__dark {
   height: 6px;
   width: 0%;
   background: var(--active_color);
+
 }/*# sourceMappingURL=index.css.map */
