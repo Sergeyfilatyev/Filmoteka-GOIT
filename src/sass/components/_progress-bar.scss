@@ -1,0 +1,10 @@
+.progress-bar {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    height: 6px;
+    width: 0%;
+
+    background: var(--active_color);
+}

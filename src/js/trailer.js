@@ -108,10 +108,23 @@ async function mainTrailerStart(event) {
       return;
     }
   } else {
-    const instance = basicLightbox.create(`
+    const instance = basicLightbox.create(
+      `
       <p style="color:white">No trailer for this film</p>
-  `);
+  `,
+      {
+        onShow: instance => document.addEventListener('keydown', onEscKeyPress),
+        onClose: instance =>
+          document.removeEventListener('keydown', onEscKeyPress),
+      }
+    );
     instance.show();
+
+    function onEscKeyPress(event) {
+      if (event.key === 'Escape') {
+        instance.close();
+      }
+    }
   }
 }
 

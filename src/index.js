@@ -12,3 +12,4 @@ import './js/adverttisingCasino';
 import './js/advertisingPremium';
 import './js/advertisingCasino2';
 import './js/trailer';
+import './js/progress-bar';

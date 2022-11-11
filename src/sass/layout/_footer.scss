@@ -16,13 +16,11 @@
 }
 .second-line {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
   align-items: center;
 }
 .second-line__text {
   display: inline-flex;
-  gap: 5px;
 }
 .modal-link {
   text-decoration: underline;
@@ -37,5 +35,8 @@
   }
   .first-line {
     margin-bottom: 0;
+  }
+  .second-line {
+    gap: 5px;
   }
 }

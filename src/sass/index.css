@@ -899,7 +899,9 @@ button {
   position: absolute;
   width: 80px;
   top: 5px;
+
   left: 0px;
+
   border: none;
   background-color: transparent;
 }
@@ -1461,7 +1463,6 @@ button {
   }
 }
 .pagination ul {
-  min-width: 374px;
   border-radius: 10px;
 }
 
@@ -1779,14 +1780,12 @@ body.theme-light .theme__dark {
 
 .second-line {
   display: flex;
-  gap: 10px;
   justify-content: space-between;
   align-items: center;
 }
 
 .second-line__text {
   display: inline-flex;
-  gap: 5px;
 }
 
 .modal-link {
@@ -1803,4 +1802,19 @@ body.theme-light .theme__dark {
   .first-line {
     margin-bottom: 0;
   }
+
+
+  .second-line {
+    gap: 5px;
+  }
+}
+.progress-bar {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  height: 6px;
+  width: 0%;
+  background: var(--active_color);
+
 }/*# sourceMappingURL=index.css.map */
