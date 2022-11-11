@@ -944,6 +944,17 @@ button {
   border: 0;
 }
 
+@keyframes openModal {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  0% {
+    transform: translate(-50%, -50%) scale(0/5);
+  }
+}
 .backdrop {
   position: fixed;
   top: 0;
@@ -952,9 +963,10 @@ button {
   height: 100%;
   padding: 20px;
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
   background-color: var(--backdrop-color);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms linear, visibility 250ms linear;
 }
 
 .backdrop.is-hidden {
@@ -971,17 +983,14 @@ button {
   padding: 50px 20px 40px 20px;
   border-radius: 5px;
   overflow: auto;
-  z-index: 101;
   overflow-y: auto;
-  transform: translate(-50%, -50%) scale(0);
+  visibility: visible;
+  opacity: 1;
   background-color: var(--main-accent-color);
   z-index: 100;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -50%);
+  animation: openModal 250ms linear;
 }
 
 .modal-btn-close {
@@ -1133,7 +1142,6 @@ button {
   .modal {
     width: 704px;
     top: 50%;
-    transform: translate(-50%, -50%);
     padding-left: 30px;
     padding-right: 30px;
   }
