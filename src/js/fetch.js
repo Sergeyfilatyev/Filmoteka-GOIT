@@ -1,3 +1,4 @@
+import { addToStorage, getFromStorage } from './localStorage';
 import { refs } from './refs';
 
 const axios = require('axios').default;
@@ -13,7 +14,7 @@ export async function fetchPopular(page) {
       `${BASIC_QUERY_LINK}/trending/movie/week?api_key=${API_KEY}&page=${page}`
     );
 
-    const genderId = await fetchGenresId();
+    const genderId = getFromStorage('genres');
 
     const movies = response.data.results.map(object => {
       let cover;
@@ -66,7 +67,7 @@ export async function fetchByName(query, page) {
       `${BASIC_QUERY_LINK}/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`
     );
 
-    const genderId = await fetchGenresId();
+    const genderId = getFromStorage('genres');
 
     const movies = response.data.results.map(object => {
       let cover;
@@ -177,6 +178,15 @@ export async function fetchGenresId() {
     const response = await axios.get(
       `${BASIC_QUERY_LINK}/genre/movie/list?api_key=${API_KEY}`
     );
-    return response.data.genres;
+
+    const genres = response.data.genres;
+
+    addToStorage('genres', genres);
+
+    return genres;
   } catch (error) {}
 }
+
+if (getFromStorage('genres')) {
+  return;
+} else fetchGenresId();
