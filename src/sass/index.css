@@ -806,12 +806,15 @@ button {
 
 .btn-youtube {
   position: absolute;
-  width: 50px;
-  height: 35px;
-  top: 0px;
-  left: 0px;
+  width: 80px;
+  top: 5px;
+  left: 5px;
   border: none;
   background-color: transparent;
+}
+
+.icon-youtube {
+  width: 80px;
 }
 
 @media screen and (min-width: 768px) {
@@ -831,10 +834,6 @@ button {
   }
   .info__other {
     font-size: 14px;
-  }
-  .btn-youtube {
-    width: 60px;
-    height: 45px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -859,8 +858,10 @@ button {
     height: 20px;
   }
   .btn-youtube {
-    width: 50px;
-    height: 35px;
+    width: 60px;
+  }
+  .icon-youtube {
+    width: 60px;
   }
 }
 .watched-film__card {
@@ -1356,7 +1357,6 @@ button {
   }
 }
 .pagination ul {
-  min-width: 374px;
   border-radius: 10px;
 }
 
