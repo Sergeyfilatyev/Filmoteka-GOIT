@@ -15,7 +15,7 @@ export async function markupPopularFilms(page) {
   refs.popularFilms.innerHTML = '';
 
   const films = await fetchPopular(page);
-
+  console.log(films);
   films.movies.forEach(movie => {
     let name;
 
@@ -35,7 +35,7 @@ export async function markupPopularFilms(page) {
       refs.popularFilms.insertAdjacentHTML(
         'beforeend',
         `<li class="popular-film__card"  data-id="${movie.id}" >
-          <img 
+          <img
             class="popular-film__cover"
             src="${movie.cover}"
             alt="${movie.name}"
@@ -55,7 +55,7 @@ export async function markupPopularFilms(page) {
     refs.popularFilms.insertAdjacentHTML(
       'beforeend',
       `<li class="popular-film__card"  data-id="${movie.id}">
-      <img 
+      <img
         class="popular-film__cover"
         src="${movie.cover}"
         alt="${movie.name}"
